@@ -7,11 +7,13 @@ export default function TodoList() {
         alt="Hedy Lamarr" 
         className="photo" 
       />
-      <ul>
-        <li>Invent new traffic lights</li>
-        <li>Rehearse a d jlkjmovie scene</li>
-        <li>Improve the spectrum technology</li>
-      </ul>
+      <div className="bg-red">
+        <ul>
+          <li>Invent new traffic lights</li>
+          <li>Rehearse a d jlkjmovie scene</li>
+          <li>Improve the spectrum technology</li>
+        </ul>
+      </div>
     </>
   );
 }
