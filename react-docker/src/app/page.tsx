@@ -1,19 +1,19 @@
+import Card from './components/card'
+import {iconMap, Icon} from './components/icon'
+
 export default function TodoList() {
   return (
     <>
-      <h1>Hedy Lamarr's Todos</h1>
-      <img 
-        src="https://i.imgur.com/yXOvdOSs.jpg" 
-        alt="Hedy Lamarr" 
-        className="photo" 
+      <h1>Selected Work</h1>
+      <Card
+        imageUrl={"https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png"}
+        title={"1989"}
+        icons={"icons"}
       />
-      <div className="bg-red">
-        <ul>
-          <li>Invent new traffic lights</li>
-          <li>Rehearse a d jlkjmovie scene</li>
-          <li>Improve the spectrum technology</li>
-        </ul>
-      </div>
+
+      {Object.keys(iconMap).map((i) =>
+        <Icon name={i}/>
+      )}
     </>
   );
 }
