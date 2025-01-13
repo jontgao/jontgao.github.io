@@ -10,11 +10,11 @@ export const iconMap = {
 
 type iconName = keyof typeof iconMap
 
-export function Icon({name}: {name: iconName}) {
+export default function Icon({name}: {name: iconName}) {
     const IconComponent = iconMap[name]
     return (
         <IconComponent
-            className="w-[2rem] h-[2rem] fill-pitch"
+            className="w-icon-w h-icon-w fill-pitch"
         />
     )
   }

@@ -21,10 +21,17 @@ export default {
 
     extend: {
       spacing: {
-        'exfornow': '96rem',
+        'section-w': '62.5rem',
+        
+        'card-grid-gap-x': '1.25rem',
+        'card-grid-gap-y': '3.5rem',
+
+        'card-gap': '0.5rem',
+
+        'icon-w': '2rem',
       },
       borderRadius: {
-        'exfornow': '2rem',
+        'image': '2rem',
       }
     },
   },
