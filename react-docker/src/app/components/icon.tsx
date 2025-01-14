@@ -8,9 +8,9 @@ export const iconMap = {
     linkedin: LinkedInIcon
 }
 
-type iconName = keyof typeof iconMap
+export type iconNameType = keyof typeof iconMap
 
-export default function Icon({name}: {name: iconName}) {
+export default function Icon({name}: {name: iconNameType}) {
     const IconComponent = iconMap[name]
     return (
         <IconComponent

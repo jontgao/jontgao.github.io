@@ -1,3 +1,5 @@
+import Icon from './icon'
+
 export interface CardProps {
     id: number;
     imageUrl: string;
