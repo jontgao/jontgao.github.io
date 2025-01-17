@@ -44,7 +44,7 @@ interface ButtonRowProps {
 }
 export function ButtonRow({buttonProps, className}: ButtonRowProps) {
   return (
-    <div className={`flex flex-wrap gap-x-[1rem] gap-y-[0.5rem] ${className || ""}`}>
+    <div className={`button-row-style my-[3rem] ${className || ""}`}>
       {
         buttonProps.map((buttonProp) => 
           <SolidButton {...buttonProp} />
@@ -59,11 +59,26 @@ interface FilterProps {
   isChecked: boolean;
   className?: string;
 }
-export function Filter({text, isChecked, className}: FilterProps) {
+interface FilterRowProps {
+  filterProps: FilterProps[];
+  className?: string;
+}
+function Filter({text, isChecked = false, className}: FilterProps) {
   let button = isChecked
     ? (<SolidButton text={text} iconName="checked" className={className}/>)
     : (<HollowButton text={text} className={className} />)
   return (
     <>{button}</>
+  )
+}
+export function FilterRow({filterProps, className}: FilterRowProps) {
+  return (
+    <div className={`button-row-style gap-x-[2rem] mb-[2rem] ${className || ''}`}>
+      {
+        filterProps.map((filterProp) =>
+          <Filter {...filterProp} />
+        )
+      }
+    </div>
   )
 }

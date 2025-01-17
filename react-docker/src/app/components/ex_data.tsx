@@ -1,3 +1,31 @@
+export const socials = [
+  {
+    text: "GitHub",
+    linkUrl: "https://github.com/jontgao",
+    iconName: "github"
+  }, {
+    text: "LinkedIn",
+    linkUrl: "https://www.linkedin.com/in/jonathan-t-gao/",
+    iconName: "linkedin"
+  }, {
+    text: "Resume",
+    linkUrl: "",
+  }
+]
+
+export const filters = [
+  {
+    text: "Featured",
+    isChecked: true
+  }, {
+    text: "AI/ML"
+  }, {
+    text: "Software Engineering"
+  }, {
+    text: "Design"
+  }
+]
+
 export const albums = [
     {
       id: 0,

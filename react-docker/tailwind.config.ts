@@ -32,6 +32,9 @@ export default {
       },
       borderRadius: {
         'image': '2rem',
+      },
+      backgroundImage: {
+        'hero-img': "url('/hero_img.svg')"
       }
     },
   },
