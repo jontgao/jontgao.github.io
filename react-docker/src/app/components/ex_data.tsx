@@ -26,6 +26,35 @@ export const filters = [
   }
 ]
 
+export const navLinks = [
+  {
+    text: "Projects",
+    linkUrl: "https://en.wikipedia.org/wiki/Project"
+  }, {
+    text: "About",
+    linkUrl: "https://en.wikipedia.org/wiki/About"
+  }, {
+    text: "Resume",
+    linkUrl: "https://en.wikipedia.org/wiki/Resume"
+  }
+]
+
+export const footerLinks = [
+  {
+    text: "GitHub",
+    linkUrl: "https://github.com/jontgao",
+  }, {
+    text: "LinkedIn",
+    linkUrl: "https://www.linkedin.com/in/jonathan-t-gao/",
+  }, {
+    text: "Resume",
+    linkUrl: "",
+  }, {
+    text: "Email",
+    linkUrl: "",
+  }
+]
+
 export const albums = [
     {
       id: 0,

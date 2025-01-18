@@ -34,7 +34,12 @@ export default {
         'image': '2rem',
       },
       backgroundImage: {
-        'hero-img': "url('/hero_img.svg')"
+        'hero-img': "url('/hero_img.svg')",
+        'footer-img': "url('/footer_bg.svg')",
+        'side-page-img': "url('/side_page_img.svg')",
+      },
+      backgroundSize: {
+        'cover-x': "100% auto",
       }
     },
   },

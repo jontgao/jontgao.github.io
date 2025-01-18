@@ -11,10 +11,10 @@ export default function AboutMe() {
           <h2>H2 About Me</h2>
           <div className="body-text">
           <p>
-              I'm Jonathan, an undergrad studying computer science at the University of Illinois at Urbana-Champaign. I've worked in software engineering, AI, UI/UX, and a variety of leadership roles (such as serving as Co-Director for HackIllinois 2023). Some of my favorites include weight lifting, Winnie-the-Pooh by A. A. Milne, literally everything by Taylor Swift, and the show Fellow Travelers.
+              I'm Jonathan, an undergrad studying computer science at the University of Illinois at Urbana-Champaign. I've worked in software engineering, AI, UI/UX, and a variety of leadership roles (such as serving as Co-Director for HackIllinois 2023). Some of my favorites include weight lifting, <i>Winnie-the-Pooh</i> by A. A. Milne, literally everything by Taylor Swift, and the show <i>Fellow Travelers</i>.
           </p>
           <p>
-              Feel free to say hello--I'd love to get to know you!
+              Feel free to say hello—I'd love to get to know you!
           </p>
           </div>
           <ButtonRow buttonProps={socials}/>
