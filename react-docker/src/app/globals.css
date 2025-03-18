@@ -10,6 +10,12 @@
   }
 }
 
+@layer utilities {
+  .font-ligatures-common {
+    font-variant-ligatures: common-ligatures;
+  }
+}
+
 @layer components {
   .text-style-display-title {
     @apply text-[8rem] font-black leading-[1];

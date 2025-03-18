@@ -16,7 +16,7 @@ export default {
     },
     
     fontFamily: {
-      sans: ['Satoshi Variable', 'Helvetica', 'Arial', 'sans-serif'],
+      sans: ['Satoshi', 'Helvetica', 'Arial', 'sans-serif'],
     },
 
     extend: {
