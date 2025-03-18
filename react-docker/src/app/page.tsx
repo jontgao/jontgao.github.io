@@ -24,7 +24,7 @@ export default function Projects() {
       <div className="
         h-[26.5rem] pb-[6.21rem]
         flex justify-center items-end
-        bg-footer-img bg-bottom	bg-cover-x bg-no-repeat
+        bg-footer-img bg-top	bg-cover-x bg-no-repeat
       ">
         <Footer />
       </div>

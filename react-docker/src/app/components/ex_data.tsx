@@ -15,13 +15,17 @@ export const socials = [
 
 export const filters = [
   {
+    id: 0,
     text: "Featured",
     isChecked: true
   }, {
+    id: 1,
     text: "AI/ML"
   }, {
+    id: 2,
     text: "Software Engineering"
   }, {
+    id: 3,
     text: "Design"
   }
 ]
@@ -60,18 +64,21 @@ export const albums = [
       id: 0,
       imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1f/Taylor_Swift_-_Taylor_Swift.png",
       title: "Taylor Swift",
-      linkUrl: "https://tserasarchive.taylorswift.com/selftitled"
+      linkUrl: "https://tserasarchive.taylorswift.com/selftitled",
+      tags: ["1", "2"],
     }, {
       id: 1,
       imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5b/Fearless_%28Taylor%27s_Version%29_%282021_album_cover%29_by_Taylor_Swift.png",
       title: "Fearless (Taylor's Version)",
       linkUrl: "https://tserasarchive.taylorswift.com/fearlesstv",
+      tags: ["1"],
       className: "text-slate-300"
     }, {
       id: 2,
       imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5b/Taylor_Swift_-_Speak_Now_%28Taylor%27s_Version%29.png",
       title: "Speak Now (Taylor's Version)",
-      linkUrl: "https://tserasarchive.taylorswift.com/speaknowtv"
+      linkUrl: "https://tserasarchive.taylorswift.com/speaknowtv",
+      tags: ["2"],
     }, {
       id: 3,
       imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/47/Taylor_Swift_-_Red_%28Taylor%27s_Version%29.png",
