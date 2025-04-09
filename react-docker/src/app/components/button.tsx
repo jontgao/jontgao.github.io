@@ -1,8 +1,5 @@
-"use client";
-
 import Icon from "./icon";
 import {iconNameType} from "./icon";
-import { useState } from 'react';
 
 interface ButtonProps {
     text: string;
@@ -25,7 +22,7 @@ export function SolidButton({text, linkUrl, iconName, className}: ButtonProps) {
     </a>
   )
 }
-function HollowButton({text, linkUrl, iconName, className}: ButtonProps) {
+export function HollowButton({text, linkUrl, iconName, className}: ButtonProps) {
   return (
     <a
       href={linkUrl}
@@ -54,46 +51,5 @@ export function ButtonRow({buttonProps, className}: ButtonRowProps) {
         )
       }
     </div>
-  )
-}
-
-interface FilterProps {
-  id: number,
-  text: string;
-  isChecked: boolean;
-  tags: string[]; // @todo: refactor to enum
-  className?: string;
-}
-interface FilterRowProps {
-  filterProps: FilterProps[];
-  className?: string;
-}
-function Filter({text, isChecked = false, className}: FilterProps) {
-  let button = isChecked
-    ? (<SolidButton text={text} iconName="checked" className={className}/>)
-    : (<HollowButton text={text} className={className} />)
-  return (
-    <>{button}</>
-  )
-}
-export function FilterRow({filterProps, className}: FilterRowProps) {
-  const [filtered, setFiltered] = useState(filterProps);
-  const handleFilter = (event) => {
-    const value = event.target.value;
-    const f = filterProps.filter(filterProp => filterProp.tags && filterProp.tags.includes(value));
-    setFiltered(f);
-  };
-  return (
-    <>
-      <input type="text" onChange={handleFilter} />
-      <div className={`button-row-style gap-x-[2rem] mb-[2rem] ${className || ''}`}>
-        {
-          filtered.map((filterProp) =>
-            <Filter {...filterProp} key={filterProp.id}/>
-          )
-        }
-      </div>
-    </>
-    
   )
 }
