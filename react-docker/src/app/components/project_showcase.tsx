@@ -4,7 +4,7 @@
 import CardGrid from "./cardgrid";
 import { filters, albums } from "./ex_data";
 import { useState } from 'react';
-import FilterGrid from "./filters"
+import FilteredGrid from "./filters"
 
 export default function ProjectShowcase() {
   // const filteredAlbums = albums
@@ -17,10 +17,7 @@ export default function ProjectShowcase() {
   return (
     <>
         <h1>Selected Work</h1>
-        
-        <FilterGrid filters={filters} items={albums} />
-        {/* <FilterRow filterProps={filters} onChange={handleFilter}/>
-        <CardGrid projs={filteredAlbums} /> */}
+        <FilteredGrid filters={filters} items={albums} />
     </>
   )
 }

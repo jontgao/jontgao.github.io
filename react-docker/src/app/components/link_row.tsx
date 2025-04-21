@@ -1,4 +1,5 @@
 interface LinkProps {
+  id: number,
   text: string,
   linkUrl: string
 }

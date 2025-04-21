@@ -3,14 +3,14 @@ import {iconNameType} from "./icon";
 
 interface ButtonProps {
     text: string;
-    linkUrl?: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     iconName?: iconNameType;
     className?: string;
 }
-export function SolidButton({text, linkUrl, iconName, className}: ButtonProps) {
+export function SolidButton({text, onClick, iconName, className}: ButtonProps) {
   return (
-    <a
-      href={linkUrl}
+    <button
+      onClick={onClick}
       className={`
         button-base-style
         flex flex-row	gap-[0.25rem]
@@ -19,13 +19,13 @@ export function SolidButton({text, linkUrl, iconName, className}: ButtonProps) {
       `}
     >
       {iconName && <Icon name={iconName} />} {text}
-    </a>
+    </button>
   )
 }
-export function HollowButton({text, linkUrl, iconName, className}: ButtonProps) {
+export function HollowButton({text, onClick, iconName, className}: ButtonProps) {
   return (
-    <a
-      href={linkUrl}
+    <button
+      onClick={onClick}
       className={`
         button-base-style
       flex flex-row	gap-[0.25rem]
@@ -34,7 +34,7 @@ export function HollowButton({text, linkUrl, iconName, className}: ButtonProps) 
       `}
     >
       {iconName && <Icon name={iconName} />} {text}
-    </a>
+    </button>
   )
 }
 

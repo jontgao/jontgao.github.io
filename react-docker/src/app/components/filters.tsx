@@ -1,54 +1,72 @@
 import {useState, useEffect} from "react"
 import {SolidButton, HollowButton} from "./button"
 import CardGrid from "./cardgrid"
-import { filters, albums } from "./ex_data";
+import {CardProps, CardCategories} from "./card"
 
-export default function FilterGrid(filters, items) {
-    const [selectedFilter, setSelectedFilter] = useState([])
+/**
+ * A row of filters above a CardGrid. Items in CardGrid are filtered based on the filters
+ * Single-select filter!
+ */
+interface FilteredGridProps {
+    filters: FilterProps[];
+    items: CardProps[];
+    className?: string;
+}
+export default function FilteredGrid({filters, items, className}: FilteredGridProps) {
+    const [selectedFilter, setSelectedFilter] = useState(CardCategories.One)
     const [filteredItems, setFilteredItems] = useState(items)
 
-    const handleFilterButtonClick = (selectedCategory) =>  {
-        setSelectedFilter(selectedCategory)
+    const handleFilterButtonClick = (selectedFilter: CardCategories) =>  {
+        setSelectedFilter(selectedFilter)
     }
 
     useEffect(() => {
-        setFilteredItems(items.filter((x) => x.category.includes(selectedFilter)))
-    }, selectedFilter)
+        setFilteredItems(items.filter((x) => x.categories.includes(selectedFilter)))
+    }, [selectedFilter])
 
     return (
-        <>
-            <FilterRow filterProps={filters} handleFilterButtonClick={handleFilterButtonClick} />
+        <div className={`${className || ''}`}>
+            <FilterRow filterProps={filters} handleFilterButtonClick={handleFilterButtonClick} selectedFilter={selectedFilter} />
             <CardGrid projs={filteredItems} />
-        </>
+        </div>
     )
 }
 
+/**
+ * A row of filter buttons
+ */
+interface FilterRowProps {
+    filterProps: FilterProps[];
+    handleFilterButtonClick: (selectedFilter: CardCategories) => void;
+    selectedFilter: CardCategories;
+    className?: string;
+}
+function FilterRow({filterProps, handleFilterButtonClick, selectedFilter, className}: FilterRowProps) {
+    return (
+        <div className={`button-row-style gap-x-[2rem] mb-[2rem] ${className || ''}`}>
+            {filterProps.map((filterProp) =>
+                <Filter key={filterProp.id} {...filterProp} onClick={() => handleFilterButtonClick(filterProp.category)} isChecked={filterProp.category === selectedFilter}/>
+            )}
+        </div>
+    )
+}
+
+/**
+ * An individual filter buttons
+ */
 interface FilterProps {
+    id: number;
     text: string;
+    category: CardCategories;
+    onClick: () => void;
     isChecked: boolean;
     className?: string;
 }
-interface FilterRowProps {
-    filterProps: FilterProps[];
-    handleFilterButtonClick: any; // fix
-    className?: string;
-}
-function Filter({text, isChecked = false, className}: FilterProps) {
-    let button = isChecked
-        ? (<SolidButton text={text} iconName="checked" className={className}/>)
-        : (<HollowButton text={text} className={className} />)
+function Filter(filterProp: FilterProps) {
+    let button = filterProp.isChecked
+        ? (<SolidButton text={filterProp.text} onClick={filterProp.onClick} iconName="checked" className={filterProp.className}/>)
+        : (<HollowButton text={filterProp.text} onClick={filterProp.onClick} className={filterProp.className} />)
     return (
         <>{button}</>
-    )
-}
-function FilterRow({filterProps, handleFilterButtonClick, className}: FilterRowProps) {
-    return (
-        <div className={`button-row-style gap-x-[2rem] mb-[2rem] ${className || ''}`}>
-            {
-            filterProps.map((filterProp) =>
-                <Filter {...filterProp} onClick={() => handleFilterButtonClick(text)} key={filterProp.id}/>
-            )
-            }
-        </div>
     )
 }

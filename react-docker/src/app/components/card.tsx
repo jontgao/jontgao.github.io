@@ -1,11 +1,17 @@
 import Icon from './icon'
-
+export enum CardCategories {
+  One,
+  Two,
+  Three,
+  Four
+}
 export interface CardProps {
-    id: number;
-    imageUrl: string;
-    title: string;
-    linkUrl?: string;
-    className?: string;
+  id: number;
+  imageUrl: string;
+  title: string;
+  categories: CardCategories[];
+  linkUrl?: string;
+  className?: string;
 }
 
 export default function Card({id, imageUrl, title, linkUrl, className}: CardProps) {
