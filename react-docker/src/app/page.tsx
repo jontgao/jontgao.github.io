@@ -7,7 +7,6 @@ import Nameplate from './components/nameplate';
 import Footer from './components/footer';
 
 export default function Projects() {
-
   return (
     <>
       <div className="bg-hero-img bg-cover-x bg-no-repeat">
@@ -21,6 +20,7 @@ export default function Projects() {
           <Section content={<AboutMe />} />
         </SectionWrapper>
       </div>
+      
       <div className="
         h-[26.5rem] pb-[6.21rem]
         flex justify-center items-end
