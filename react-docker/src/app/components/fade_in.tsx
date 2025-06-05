@@ -1,9 +1,9 @@
-import { motion } from "motion/react";
+import * as motion from "motion/react-client"
+
 interface FadeInProps {
     children: React.ReactNode
 }
 export default function FadeIn({children}: FadeInProps) {
-    console.log("SJDKLFJ", motion);
     return (
         <motion.div 
             initial={{ opacity: 0, y: 100 }}

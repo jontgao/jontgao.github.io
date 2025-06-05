@@ -5,6 +5,7 @@ import {navLinks} from './components/ex_data'
 import LinkRow from './components/link_row';
 import Nameplate from './components/nameplate';
 import Footer from './components/footer';
+import FadeIn from './components/fade_in';
 
 export default function Projects() {
   return (
