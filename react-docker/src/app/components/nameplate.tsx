@@ -1,11 +1,25 @@
+"use client"
+
 import * as motion from "motion/react-client"
+import { AnimatePresence, AnimationScope, useAnimate } from "motion/react"
+import { useState, useEffect } from "react"
+
+const subtitles = [
+    "ML Engineer",
+    "CS @ UIUC",
+    "Swiftie",
+    "UI/UX Designer",
+    "Weight Lifter",
+    "Beyoncé Lover",
+    "Mario Kart Racer",
+]
 
 function NameplateStar() {
     return (
         <div className="relative -top-[9em] right-[6em]">
             <motion.img
                 src="star.svg"
-                animate={{rotate: 360}}
+                animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
                 className="absolute top-0 right-0 size-[12.03975rem]"
             />
@@ -13,15 +27,27 @@ function NameplateStar() {
     )
 }
 function NameplateSubtitle() {
-    const txt = "ML Engineer"
+    const [index, setIndex] = useState(0)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(i => (i+1) % subtitles.length)
+        }, 2500)
+        return () => clearInterval(interval)
+    }, [])
+    
     return (
-        <motion.div
-            animate={{x: 360}}
-            transition={{ duration: 3 }}
-            className='text-style-display-subtitle'
-        >
-            {txt}
-        </motion.div>
+        <AnimatePresence mode="wait">
+            <motion.div
+                key={index}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className='text-style-display-subtitle'
+            >
+                {subtitles[index]}
+            </motion.div>
+        </AnimatePresence>
     )
 }
 function NameplateText() {
@@ -35,14 +61,20 @@ function NameplateText() {
     )
 }
 export default function Nameplate() {
+    const [scope, animate] = useAnimate()
+
+    useEffect(() => {
+        animate("li", { opacity: 1} )
+    })
+
     return (
         <div className="h-[53.625rem] flex justify-center">
-            <div className="w-[62.625rem] h-[30.6875rem] mt-[8.5rem] p-[3rem]
-                bg-pitch rounded-[2rem]"
+            <motion.div
+                className="w-[62.625rem] h-[30.6875rem] mt-[10.5rem] p-[3rem] bg-pitch rounded-[2rem]"
             >
-                <NameplateStar />
-                <NameplateText />
-            </div>
+                <NameplateStar ref={scope}/>
+                <NameplateText ref={scope}/>
+            </motion.div>
         </div>
     )
 }
