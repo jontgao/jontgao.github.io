@@ -1,3 +1,7 @@
+"use client"
+import * as motion from "motion/react-client"
+import { AnimatePresence } from "motion/react";
+
 import Card from "./card"
 import {CardProps} from "./card"
 
@@ -9,11 +13,13 @@ export interface CardGridProps {
 export default function CardGrid({projs, className}: CardGridProps) {
     return (
         <div className={`grid grid-cols-3 gap-x-card-grid-gap-x gap-y-card-grid-gap-y ${className || ''}`}>
-            {
-                projs.map((proj) => 
-                    <Card key={proj.id} {...proj}/>
-                )
-            }
+            <AnimatePresence mode="popLayout">
+                {
+                    projs.map((proj) =>
+                        <Card key={proj.id} {...proj}/>
+                    )
+                }
+            </AnimatePresence>
         </div>
     )
   }

@@ -1,4 +1,5 @@
-import Icon from './icon'
+import * as motion from "motion/react-client"
+
 export enum CardCategories {
   One,
   Two,
@@ -16,13 +17,20 @@ export interface CardProps {
 
 export default function Card({id, imageUrl, title, linkUrl, className}: CardProps) {
   return (
-    <a href={linkUrl} rel="noreferrer" className={`flex flex-col space-y-card-gap ${className || ''}`}>
+    <motion.a
+      layout
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0, opacity: 0, transition: { duration: 0.2 } }}
+      href={linkUrl} rel="noreferrer"
+      className={`flex flex-col space-y-card-gap ${className || ''}`}
+    >
       <img
         className="w-full rounded-image aspect-square object-cover"
         src={imageUrl}
         alt={title}
       />
       <div className="text-style-card-title">{title}</div>
-    </a>
+    </motion.a>
   )
 }

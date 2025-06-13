@@ -1,7 +1,7 @@
 "use client"
 
 import * as motion from "motion/react-client"
-import { AnimatePresence, AnimationScope, useAnimate } from "motion/react"
+import { AnimatePresence, useAnimate } from "motion/react"
 import { useState, useEffect, forwardRef } from "react"
 
 const subtitles = [
