@@ -79,7 +79,7 @@ const Nameplate = () => {
         const enterSequence = async () => {
             await animate(".nameplate-star, .nameplate-text, .nameplate-subtitle", { opacity: 0 }, { duration: 0 })
             await animate(scope.current, { opacity: 1 }, { duration: 0 })
-            await animate(scope.current, { transform: "scaleX(1)" }, { duration: 0.4, delay: 0.3 })
+            await animate(scope.current, { transform: "scaleX(1)" }, { duration: 0.2, delay: 0.15 })
             await animate(".nameplate-star", { opacity: 1 }, { duration: 0.3 })
             await animate(".nameplate-text", { opacity: 1 }, { duration: 0.3 })
             await animate(".nameplate-subtitle", { opacity: 1 }, { duration: 0.3 })
