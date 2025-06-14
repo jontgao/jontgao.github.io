@@ -9,6 +9,7 @@ interface ButtonProps {
 }
 export function SolidButton({text, onClick, iconName, className}: ButtonProps) {
   return (
+    // TODO: smooth animation for check mark appearing/disappearing
     <button
       onClick={onClick}
       className={`
