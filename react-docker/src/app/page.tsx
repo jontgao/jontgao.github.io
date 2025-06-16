@@ -9,7 +9,7 @@ import FadeIn from './components/fade_in';
 
 export default function Projects() {
   return (
-    <>
+    <div className='max-w-full'>
       <div className="bg-hero-img bg-cover-x bg-no-repeat">
         <div className="fixed top-[3rem] right-[4rem]">
           <LinkRow linkProps={navLinks} />
@@ -29,6 +29,6 @@ export default function Projects() {
       ">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

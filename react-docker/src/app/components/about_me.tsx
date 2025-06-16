@@ -7,7 +7,7 @@ export default function AboutMe() {
     <>
       <h1>About Me</h1>
       <TwoCol left={
-        <div className="pr-[4rem]">
+        <div className="md:pr-[4rem]">
           <h2>H2 About Me</h2>
           <div className="body-text">
           <p>
