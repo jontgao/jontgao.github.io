@@ -16,12 +16,23 @@ const subtitles = [
 
 const NameplateStar = forwardRef<HTMLDivElement>((props, scope) => {
     return (
-        <div ref={scope} className="relative -top-[9em] right-[6em] nameplate-star">
+        <div
+            ref={scope}
+            className="
+                nameplate-star
+            "
+            // w-full flex flex-col items-center bg-ketchup
+            // relative -top-[9em] right-[6em] 
+        >
             <motion.img
                 src="star.svg"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                className="absolute top-0 right-0 size-[12.03975rem]"
+                className="
+                    absolute -top-[2rem] right-[1rem]
+                    size-[12.03975rem]
+                    
+                    md:-top-[9rem] md:right-[6rem]"
             />
         </div>
     )
@@ -91,8 +102,16 @@ const Nameplate = () => {
         <div className="h-[53.625rem] flex justify-center">
             <motion.div
                 ref={scope}
-                className="w-[62.625rem] h-[30.6875rem] mt-[10.5rem] p-[3rem]
-                         bg-pitch rounded-[2rem] opacity-0"
+                className="
+                           w-full max-w-[22.5rem] mx-[1rem] my-[3rem] p-[2rem]
+                         bg-pitch rounded-[2rem] opacity-0
+                           relative
+
+                           md:max-w-[46rem] md:h-[30.6875rem] md:mt-[10.5rem] md:p-[3rem]
+                           lg:max-w-[62.625rem]
+                "
+
+                //  w-[62.625rem] h-[30.6875rem] mt-[10.5rem] p-[3rem]
             >
                 <NameplateStar ref={scope}/>
                 <NameplateText ref={scope}/>

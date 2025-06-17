@@ -10,7 +10,7 @@ interface SectionWrapperProps extends SectionProps {}
 export function Section({children, content, className}: SectionProps) {
   return (
     <div className={`
-      w-[22.375rem] md:w-[41.25rem] lg:w-5/6 lg:max-w-section-w
+      w-section-w md:w-section-w-md lg:w-5/6 lg:max-w-section-w-lg
       ${className || ''}
     `}>
       <FadeIn>

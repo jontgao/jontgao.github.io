@@ -9,9 +9,9 @@ import FadeIn from './components/fade_in';
 
 export default function Projects() {
   return (
-    <div className='max-w-full'>
+    <div className='w-full'>
       <div className="bg-hero-img bg-cover-x bg-no-repeat">
-        <div className="fixed top-[3rem] right-[4rem]">
+        <div className="hidden md:block fixed top-[3rem] right-[4rem]">
           <LinkRow linkProps={navLinks} />
         </div>
         <Nameplate />
@@ -25,7 +25,7 @@ export default function Projects() {
       <div className="
         h-[26.5rem]
         flex justify-center items-end
-        bg-footer-img bg-top bg-cover-x bg-no-repeat
+        bg-footer-img bg-bottom bg-cover-x bg-no-repeat
       ">
         <Footer />
       </div>

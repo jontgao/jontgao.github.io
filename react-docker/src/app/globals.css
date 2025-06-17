@@ -18,10 +18,10 @@
 
 @layer components {
   .text-style-display-title {
-    @apply text-[8rem] font-black leading-[1];
+    @apply text-[3rem] md:text-[8rem] font-black leading-[1];
   }
   .text-style-display-subtitle {
-    @apply text-[3rem] font-light leading-[1];
+    @apply text-[2rem] md:text-[3rem] font-light leading-[1];
   }
   .text-style-button {
     @apply text-[1.25rem] font-bold leading-[1.3];

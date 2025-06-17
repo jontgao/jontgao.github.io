@@ -10,13 +10,10 @@ export default function Footer(footerProps: FooterProps) {
             w-full px-[3rem] py-[3rem]
             flex flex-col gap-[2rem] items-center
             rounded-t-[2rem]
+            bg-pitch text-onwhite
 
             md:w-full md:max-w-[82.625rem] md:h-[8.5rem] 
             md:flex-row md:justify-between
-
-            
-
-            bg-pitch text-onwhite
             ${footerProps.className || ""}
         `}>
             <LinkRow linkProps={footerLinks} />
