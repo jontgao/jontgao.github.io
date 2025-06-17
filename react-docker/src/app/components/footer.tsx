@@ -7,11 +7,18 @@ interface FooterProps {
 export default function Footer(footerProps: FooterProps) {
     return (
         <div className={`
-            w-[82.625rem] h-[5.5rem] px-[3rem]
-            flex justify-between items-center
-            bg-pitch text-onwhite rounded-[2rem]
-            ${footerProps.className || ""}`}
-        >
+            w-full px-[3rem] py-[3rem]
+            flex flex-col gap-[2rem] items-center
+            rounded-t-[2rem]
+
+            md:w-full md:max-w-[82.625rem] md:h-[8.5rem] 
+            md:flex-row md:justify-between
+
+            
+
+            bg-pitch text-onwhite
+            ${footerProps.className || ""}
+        `}>
             <LinkRow linkProps={footerLinks} />
             <div>Made & Designed by Jonathan Gao</div>
         </div>

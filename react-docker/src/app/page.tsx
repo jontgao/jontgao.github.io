@@ -23,9 +23,9 @@ export default function Projects() {
       </div>
       
       <div className="
-        h-[26.5rem] pb-[6.21rem]
+        h-[26.5rem]
         flex justify-center items-end
-        bg-footer-img bg-top	bg-cover-x bg-no-repeat
+        bg-footer-img bg-top bg-cover-x bg-no-repeat
       ">
         <Footer />
       </div>
