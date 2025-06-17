@@ -10,7 +10,7 @@ import FadeIn from './components/fade_in';
 export default function Projects() {
   return (
     <div className='w-full'>
-      <div className="bg-hero-img bg-cover-x bg-no-repeat">
+      <div className="bg-hero md:bg-hero-md lg:bg-hero-lg xl:bg-hero-xl bg-cover-x bg-no-repeat">
         <Nameplate />
         <div className="hidden md:block fixed top-[3rem] right-[4rem]">
           <LinkRow linkProps={navLinks} />

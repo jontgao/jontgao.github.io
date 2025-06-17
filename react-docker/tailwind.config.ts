@@ -36,7 +36,10 @@ export default {
         'image': '2rem',
       },
       backgroundImage: {
-        'hero-img': "url('/hero_img.svg')",
+        'hero': "url('/hero_mobile.svg')",
+        'hero-md': "url('/hero_md.svg')",
+        'hero-lg': "url('/hero_lg.svg')",
+        'hero-xl': "url('/hero_xl.svg')",
         'footer-img': "url('/footer_bg.svg')",
         'side-page-img': "url('/side_page_img.svg')",
       },
