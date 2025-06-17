@@ -11,10 +11,10 @@ export default function Projects() {
   return (
     <div className='w-full'>
       <div className="bg-hero-img bg-cover-x bg-no-repeat">
+        <Nameplate />
         <div className="hidden md:block fixed top-[3rem] right-[4rem]">
           <LinkRow linkProps={navLinks} />
         </div>
-        <Nameplate />
         
         <SectionWrapper>
           <Section content={<ProjectShowcase />} />
