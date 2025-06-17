@@ -22,7 +22,7 @@ export default {
     extend: {
       spacing: {
         'section-w': '22.375rem',
-        'section-w-md': '41.25rem',
+        'section-w-md': '85vw',//'41.25rem',
         'section-w-lg': '62.5rem',
         
         'card-grid-gap-x': '1.25rem',
