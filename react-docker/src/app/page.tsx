@@ -5,15 +5,15 @@ import {navLinks} from './components/ex_data'
 import LinkRow from './components/link_row';
 import Nameplate from './components/nameplate';
 import Footer from './components/footer';
-import FadeIn from './components/fade_in';
 
 export default function Projects() {
   return (
-    <div className='w-full'>
-      <div className="bg-hero md:bg-hero-md lg:bg-hero-lg xl:bg-hero-xl bg-cover-x bg-no-repeat">
+    <div className='w-full max-w-[128rem] mx-auto'>
+      <div className="hero-bg">
         <Nameplate />
         <div className="hidden md:block fixed top-[3rem] right-[4rem]">
-          <LinkRow linkProps={navLinks} />
+          <LinkRow linkProps={navLinks} /> 
+          {/* TODO: for rly wide screens, make this sitck relative to max-w */}
         </div>
         
         <SectionWrapper>
@@ -25,8 +25,8 @@ export default function Projects() {
       <div className="
         h-[26.5rem]
         flex justify-center items-end
-        bg-footer-img bg-bottom bg-cover-x bg-no-repeat
-      ">
+        footer-bg"
+      >
         <Footer />
       </div>
     </div>

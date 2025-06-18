@@ -17,7 +17,7 @@ export default function Footer(footerProps: FooterProps) {
             ${footerProps.className || ""}
         `}>
             <LinkRow linkProps={footerLinks} />
-            <div>Made & Designed by Jonathan Gao</div>
+            <div>Made & Designed by <b>Jonathan Gao</b></div>
         </div>
     )
 }

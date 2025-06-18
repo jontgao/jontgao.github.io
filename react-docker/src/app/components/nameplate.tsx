@@ -89,15 +89,15 @@ const Nameplate = () => {
     }, [scope])
 
     return (
-        <div className="h-[53.625rem] flex justify-center">
+        <div className="h-[90vh] flex justify-center">
             <motion.div
                 ref={scope}
                 className="w-full max-w-[22.5rem] mx-[1rem] mt-[5rem] p-[2rem]
                          bg-pitch rounded-[2rem] opacity-0
                            relative
 
-                           md:max-w-[46rem] md:h-[30.6875rem] md:mt-[10.5rem] md:p-[3rem]
-                           lg:max-w-[62.625rem]"
+                           md:max-w-[46rem] md:h-[50vh] md:mt-[20vh] md:p-[3rem]
+                           lg:max-w-[62.625rem] "
             >
                 <NameplateStar ref={scope}/>
                 <NameplateText ref={scope}/>

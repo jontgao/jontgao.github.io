@@ -36,11 +36,16 @@ export default {
         'image': '2rem',
       },
       backgroundImage: {
-        'hero': "url('/hero_mobile.svg')",
+        'hero-img': "url('/hero_mobile.svg')",
         'hero-md': "url('/hero_md.svg')",
         'hero-lg': "url('/hero_lg.svg')",
         'hero-xl': "url('/hero_xl.svg')",
-        'footer-img': "url('/footer_bg.svg')",
+
+        'footer-img': "url('/bg_footer.svg')",
+        'footer-md': "url('/bg_footer_md.svg')",
+        'footer-lg': "url('/bg_footer_lg.svg')",
+        'footer-xl': "url('/bg_footer_xl.svg')",
+
         'side-page-img': "url('/side_page_img.svg')",
       },
       backgroundSize: {
