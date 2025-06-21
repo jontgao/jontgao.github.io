@@ -21,7 +21,7 @@ export default {
 
     extend: {
       spacing: {
-        'section-w': '22.375rem',
+        'section-w': '85vw',//'22.375rem',
         'section-w-md': '85vw',//'41.25rem',
         'section-w-lg': '62.5rem',
         
@@ -50,6 +50,7 @@ export default {
       },
       backgroundSize: {
         'cover-x': "100% auto",
+        'cover-y': "auto 100%",
       }
     },
   },
