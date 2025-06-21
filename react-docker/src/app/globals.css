@@ -23,6 +23,9 @@
   .footer-bg {
     @apply bg-footer-img md:bg-footer-md lg:bg-footer-lg xl:bg-footer-xl bg-cover-x bg-no-repeat;
   }
+  .proj-hero-bg {
+    @apply bg-proj-hero-img bg-cover-x bg-no-repeat;
+  }
 
   .text-style-display-title {
     @apply text-[3rem] md:text-[8rem] font-black leading-[1];
