@@ -4,10 +4,6 @@
 // }
 import AboutMe from '../components/about_me';
 import {SectionWrapper, Section} from '../components/section'
-import {navLinks} from '../components/ex_data'
-import LinkRow from '../components/link_row';
-import Footer from '../components/footer';
-
 
 export default function RootLayout({
   children,

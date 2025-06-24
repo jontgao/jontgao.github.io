@@ -1,4 +1,4 @@
-import LinkRow from "./link_row";
+import { LinkRow } from "./link_row";
 import {footerLinks} from "./ex_data"
 
 interface FooterProps {
