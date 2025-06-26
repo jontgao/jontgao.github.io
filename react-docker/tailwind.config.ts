@@ -47,6 +47,9 @@ export default {
         'footer-xl': "url('/bg_footer_xl.svg')",
 
         'proj-hero-img': "url('/side_page_img.svg')",
+        'proj-hero-md': "url('/side_page_md.svg')",
+        'proj-hero-lg': "url('/side_page_lg.svg')",
+        'proj-hero-xl': "url('/side_page_xl.svg')",
       },
       backgroundSize: {
         'cover-x': "100% auto",

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     description: proj.metaDesc,
   }
 }
-// TODO: breakpoint side_page_img
+
 export default async function Page({ params }: PageParams) {
     const proj = lookUpProj({params})
     return (

@@ -24,7 +24,7 @@
     @apply bg-footer-img md:bg-footer-md lg:bg-footer-lg xl:bg-footer-xl bg-cover-x bg-no-repeat;
   }
   .proj-hero-bg {
-    @apply bg-proj-hero-img bg-cover-x bg-no-repeat;
+    @apply bg-proj-hero-img md:bg-proj-hero-md lg:bg-proj-hero-lg xl:bg-proj-hero-xl bg-cover-x bg-no-repeat;
   }
 
   .text-style-display-title {
@@ -53,9 +53,16 @@
   .button-row-style {
     @apply flex flex-wrap justify-center gap-x-[1rem] gap-y-[0.5rem];
   }
+
+  .linked-section {
+    @apply scroll-mt-[6rem]
+  }
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth
+  }
   h1 {
     @apply text-[4.25rem] font-black leading-[1.3] text-center mb-[2rem] md:mb-[4rem];
   }

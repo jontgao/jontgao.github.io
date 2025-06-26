@@ -38,12 +38,12 @@ export const filters = [
 export const navLinks = [
   {
     id: 0,
-    text: "Projects",
-    linkUrl: "https://en.wikipedia.org/wiki/Project"
+    text: "Home",
+    linkUrl: "/"
   }, {
     id: 1,
     text: "About",
-    linkUrl: "https://en.wikipedia.org/wiki/About"
+    linkUrl: "#about"
   }, {
     id: 2,
     text: "Resume",
