@@ -1,36 +1,25 @@
 import * as motion from "motion/react-client"
+import { useRouter } from 'next/router'
 
-export enum CardCategories {
-  One,
-  Two,
-  Three,
-  Four
-}
-export interface CardProps {
-  id: number;
-  imageUrl: string;
-  title: string;
-  categories: CardCategories[];
-  linkUrl?: string;
-  className?: string;
-}
+import { Proj } from "../proj/projData"
 
-export default function Card({id, imageUrl, title, linkUrl, className}: CardProps) {
+
+export default function Card({slug, thumbnailRef, metaTitle}: Proj) {
   return (
     <motion.a
       layout
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       exit={{ scale: 0, opacity: 0, transition: { duration: 0.2 } }}
-      href={linkUrl} rel="noreferrer"
-      className={`flex flex-col space-y-card-gap ${className || ''}`}
+      href={"/proj/" + slug} rel="noreferrer"
+      className={`flex flex-col space-y-card-gap`}
     >
       <img
         className="w-full rounded-image aspect-square object-cover"
-        src={imageUrl}
-        alt={title}
+        src={thumbnailRef}
+        alt={metaTitle}
       />
-      <div className="text-style-card-title">{title}</div>
+      <div className="text-style-card-title">{metaTitle}</div>
     </motion.a>
   )
 }

@@ -1,22 +1,32 @@
-import { projData } from "../projData"
+import type { Metadata } from 'next'
+import { projData, error404ProjData, Proj } from "../projData"
 
-export async function generateStaticParams() {
-  const projects = [
-    { slug: "test-page" }, // TODO: fix this
-  ];
-
-  return projects.map(project => ({
-    slug: project.slug
-  }));
+interface PageParams {
+  params: { slug: string };
 }
 
-export default async function Page({ params }) {
-    const proj = projData.find(p => p.slug === params.slug)
-    if (!proj) return (<h1>Error 404</h1>) // TODO: make a full Error 404 page or redirect to home?
-    // if (!proj) proj = {heading: "NONE", content: "NONE"}
+function lookUpProj({ params }: PageParams): Proj {
+  return projData.find(p => p.slug === params.slug) || error404ProjData
+}
+
+export async function generateStaticParams() {
+  return projData.map(p => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const proj = lookUpProj({params})
+ 
+  return {
+    title: proj.metaTitle,
+    description: proj.metaDesc,
+  }
+}
+// TODO: breakpoint side_page_img
+export default async function Page({ params }: PageParams) {
+    const proj = lookUpProj({params})
     return (
         <div>
-            {/* <h1>{proj.heading}</h1> */}
+            <h1>{proj.metaTitle}</h1>
             <div className="flex flex-col gap-[4rem]">
               {proj.content}
             </div>

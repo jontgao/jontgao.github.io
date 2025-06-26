@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 
 import {SolidButton, HollowButton} from "./button"
 import CardGrid from "./cardgrid"
-import {CardProps, CardCategories} from "./card"
+import {Proj, ProjCategories} from "../proj/projData"
 
 /**
  * A row of filters above a CardGrid. Items in CardGrid are filtered based on the filters
@@ -10,14 +10,14 @@ import {CardProps, CardCategories} from "./card"
  */
 interface FilteredGridProps {
     filters: FilterProps[];
-    items: CardProps[];
+    items: Proj[];
     className?: string;
 }
 export default function FilteredGrid({filters, items, className}: FilteredGridProps) {
-    const [selectedFilter, setSelectedFilter] = useState(CardCategories.One)
+    const [selectedFilter, setSelectedFilter] = useState(ProjCategories.One)
     const [filteredItems, setFilteredItems] = useState(items)
 
-    const handleFilterButtonClick = (selectedFilter: CardCategories) =>  {
+    const handleFilterButtonClick = (selectedFilter: ProjCategories) =>  {
         setSelectedFilter(selectedFilter)
     }
 
@@ -38,8 +38,8 @@ export default function FilteredGrid({filters, items, className}: FilteredGridPr
  */
 interface FilterRowProps {
     filterProps: FilterProps[];
-    handleFilterButtonClick: (selectedFilter: CardCategories) => void;
-    selectedFilter: CardCategories;
+    handleFilterButtonClick: (selectedFilter: ProjCategories) => void;
+    selectedFilter: ProjCategories;
     className?: string;
 }
 function FilterRow({filterProps, handleFilterButtonClick, selectedFilter, className}: FilterRowProps) {
@@ -58,7 +58,7 @@ function FilterRow({filterProps, handleFilterButtonClick, selectedFilter, classN
 interface FilterProps {
     id: number;
     text: string;
-    category: CardCategories;
+    category: ProjCategories;
     onClick: () => void;
     isChecked: boolean;
     className?: string;

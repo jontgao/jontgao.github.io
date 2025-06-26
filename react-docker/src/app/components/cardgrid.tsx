@@ -3,10 +3,10 @@ import * as motion from "motion/react-client"
 import { AnimatePresence } from "motion/react";
 
 import Card from "./card"
-import {CardProps} from "./card"
+import {Proj} from "../proj/projData"
 
 export interface CardGridProps {
-    projs: CardProps[];
+    projs: Proj[];
     className?: string;
 }
 
@@ -20,7 +20,7 @@ export default function CardGrid({projs, className}: CardGridProps) {
             <AnimatePresence mode="popLayout">
                 {
                     projs.map((proj) =>
-                        <Card key={proj.id} {...proj}/>
+                        <Card key={proj.slug} {...proj}/>
                     )
                 }
             </AnimatePresence>
