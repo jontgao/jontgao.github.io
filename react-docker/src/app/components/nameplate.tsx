@@ -90,7 +90,6 @@ const Nameplate = () => {
 
     return (
         <div className="h-[90vh] md:min-h-[30rem] flex justify-center">
-            {/* TODO: text is off on landscape mobile --> make static height if vh < some amount*/}
             <motion.div
                 ref={scope}
                 className="w-full max-w-[22.5rem] mx-[1rem] mt-[5rem] p-[2rem]

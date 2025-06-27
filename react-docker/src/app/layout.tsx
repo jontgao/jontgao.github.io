@@ -20,7 +20,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        <div className='w-full max-w-[128rem] mx-auto overflow-auto'>
+        <div className='w-full max-w-mx mx-auto overflow-auto'>
           <NavLinkRow />
           {children}
           

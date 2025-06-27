@@ -18,9 +18,13 @@ export default {
     fontFamily: {
       sans: ['Satoshi', 'Helvetica', 'Arial', 'sans-serif'],
     },
-
     extend: {
+      screens: {
+        'mx': '128rem' // should be identical to spacing-mx
+      },
       spacing: {
+        'mx': '128rem', // should be identical to screens-mx
+
         'section-w': '85vw',//'22.375rem',
         'section-w-md': '85vw',//'41.25rem',
         'section-w-lg': '62.5rem',

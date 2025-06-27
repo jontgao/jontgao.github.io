@@ -20,9 +20,9 @@ export function LinkRow({linkProps}: LinkRowProps) {
 
 export default function NavLinkRow() {
   return (
-    <div className="hidden md:block fixed top-[3rem] right-[4rem] text-pitch">
+    // this seems like the best way to fix relative to max-w. the 128rem is hardcoded to the max-w, but that seems to be the best solution
+    <div className="hidden md:block fixed top-[3rem] right-[4rem] mx:right-[calc(50vw-128rem/2+4rem)] text-pitch z-50">
       <LinkRow linkProps={navLinks} />
-      {/* TODO: for rly wide screens, make this sitck relative to max-w */}
     </div>
   )
 }

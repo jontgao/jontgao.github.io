@@ -23,6 +23,7 @@ export function SectionWrapper({children, content, className}: SectionWrapperPro
   return (
     <div className={`
       flex flex-col items-center my-[10rem] w-full ${className || ''}
+      
     `}>
       <div className="flex flex-col gap-y-[12.5rem] items-center w-ful">
         {children || content}
