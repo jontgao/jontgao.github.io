@@ -3,7 +3,6 @@ import { Proj } from "../proj/projData"
 
 
 export default function Card({slug, thumbnailRef, metaTitle}: Proj) {
-  // TODO: look into using Link from next. tried it but it messed up animations
   return (
     <motion.a
       layout
