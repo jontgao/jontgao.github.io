@@ -1,17 +1,15 @@
 import Icon from "./icon";
 import {iconNameType} from "./icon";
 
-interface ButtonProps {
+export interface ButtonProps {
     text: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     iconName?: iconNameType;
     className?: string;
 }
-export function SolidButton({text, onClick, iconName, className}: ButtonProps) {
+export function SolidButton({text, iconName, className}: ButtonProps) {
   return (
     // TODO: smooth animation for check mark appearing/disappearing
-    <button
-      onClick={onClick}
+    <div
       className={`
         button-base-style
         flex flex-row	gap-[0.25rem]
@@ -20,37 +18,20 @@ export function SolidButton({text, onClick, iconName, className}: ButtonProps) {
       `}
     >
       {iconName && <Icon name={iconName} />} {text}
-    </button>
+    </div>
   )
 }
-export function HollowButton({text, onClick, iconName, className}: ButtonProps) {
+export function HollowButton({text, iconName, className}: ButtonProps) {
   return (
-    <button
-      onClick={onClick}
+    <div
       className={`
         button-base-style
-      flex flex-row	gap-[0.25rem]
-      border border-pitch
+        flex flex-row	gap-[0.25rem]
+        border border-pitch
         ${className || ''}
       `}
     >
       {iconName && <Icon name={iconName} />} {text}
-    </button>
-  )
-}
-
-interface ButtonRowProps {
-  buttonProps: ButtonProps[];
-  className?: string;
-}
-export function ButtonRow({buttonProps, className}: ButtonRowProps) {
-  return (
-    <div className={`button-row-style my-[3rem] ${className || ""}`}>
-      {
-        buttonProps.map((buttonProp, i) => 
-          <SolidButton {...buttonProp} key={i}/>
-        )
-      }
     </div>
   )
 }

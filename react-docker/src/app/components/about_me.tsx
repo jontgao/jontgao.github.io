@@ -1,5 +1,5 @@
 import TwoCol from './two_col'
-import {ButtonRow} from './button'
+import {LinkButtonRow} from './link_button'
 import {socials} from './ex_data'
 
 export default function AboutMe() {
@@ -17,8 +17,7 @@ export default function AboutMe() {
                 Feel free to say hello—I'd love to get to know you!
             </p>
           </div>
-          {/* TODO: make button links functional */}
-          <ButtonRow buttonProps={socials}/>
+          <LinkButtonRow linkButtonProps={socials}/>
         </div>
       } right={
         <img className="rounded-full aspect-square object-cover" src="https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjEwOTM3OTYxNjE5OTI0OTY5/jonathan-bailey.jpg" />

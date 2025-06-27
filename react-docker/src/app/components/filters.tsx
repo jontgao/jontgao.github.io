@@ -14,7 +14,7 @@ interface FilteredGridProps {
     className?: string;
 }
 export default function FilteredGrid({filters, items, className}: FilteredGridProps) {
-    const [selectedFilter, setSelectedFilter] = useState(ProjCategories.One)
+    const [selectedFilter, setSelectedFilter] = useState(ProjCategories.Featured)
     const [filteredItems, setFilteredItems] = useState(items)
 
     const handleFilterButtonClick = (selectedFilter: ProjCategories) =>  {
@@ -22,7 +22,7 @@ export default function FilteredGrid({filters, items, className}: FilteredGridPr
     }
 
     useEffect(() => {
-        setFilteredItems(items.filter((x) => x.categories.includes(selectedFilter)))
+        setFilteredItems(items.filter((x) => x.categories && x.categories.includes(selectedFilter)))
     }, [selectedFilter])
 
     return (
@@ -65,9 +65,11 @@ interface FilterProps {
 }
 function Filter(filterProp: FilterProps) {
     let button = filterProp.isChecked
-        ? (<SolidButton text={filterProp.text} onClick={filterProp.onClick} iconName="checked" className={filterProp.className}/>)
-        : (<HollowButton text={filterProp.text} onClick={filterProp.onClick} className={filterProp.className} />)
+        ? (<SolidButton text={filterProp.text} iconName="checked" className={filterProp.className}/>)
+        : (<HollowButton text={filterProp.text} className={filterProp.className} />)
     return (
-        <>{button}</>
+        <button onClick={filterProp.onClick}>
+            {button}
+        </button>
     )
 }

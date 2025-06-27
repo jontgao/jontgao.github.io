@@ -2,10 +2,10 @@ import H2Subsection from "../components/h2_subsection"
 import TLDR from "../components/tldr"
 
 export enum ProjCategories {
-  One,
-  Two,
-  Three,
-  Four
+  Featured,
+  ML,
+  SWE,
+  Design
 }
 
 export interface Proj {
@@ -50,7 +50,7 @@ export const projData: Proj[] = [
         metaTitle: 'Pa ge 1',
         metaDesc: 'Description 1',
         thumbnailRef: 'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg',
-        categories: [ ProjCategories.One ],
+        categories: [ ProjCategories.Featured ],
         tldr: { skills: ["skdfj"], timeline: "sldkjfdf", role: "lsdj", team: ["dlsk"]},
         content: [
             <TLDR cols={quickStats}/>,
@@ -81,13 +81,12 @@ export const projData: Proj[] = [
                 }
             />,
         ]
-    },
-    {
+    }, {
         slug: 'page-2',
         metaTitle: 'Pa ge 2',
         metaDesc: 'Description 2',
         thumbnailRef: 'https://media.istockphoto.com/id/825383494/photo/business-man-pushing-large-stone-up-to-hill-business-heavy-tasks-and-problems-concept.jpg?s=612x612&w=0&k=20&c=wtqvbQ6OIHitRVDPTtoT_1HKUAOgyqa7YzzTMXqGRaQ=',
-        categories: [ ProjCategories.One, ProjCategories.Two ],
+        categories: [ ProjCategories.Featured, ProjCategories.ML ],
         tldr: { skills: ["skdfj"], timeline: "sldkjfdf", role: "lsdj", team: ["dlsk"]},
         content: [
             <TLDR cols={quickStats}/>,
