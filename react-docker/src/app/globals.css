@@ -83,4 +83,7 @@
     @apply font-sans text-pitch text-[1rem] font-normal leading-[1.3];
     background: var(--background);
   }
+  .paragraph-text a {
+    @apply underline decoration-mustard decoration-2
+  }
 }

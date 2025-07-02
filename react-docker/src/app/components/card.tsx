@@ -9,6 +9,10 @@ export default function Card({slug, thumbnailRef, metaTitle}: Proj) {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       exit={{ scale: 0, opacity: 0, transition: { duration: 0.2 } }}
+      whileHover={{
+        scale: 1.03,
+        transition: { duration: 0.1 },
+      }}
       href={`/proj/${(encodeURIComponent(slug))}`}
       className={`flex flex-col space-y-card-gap`}
     >

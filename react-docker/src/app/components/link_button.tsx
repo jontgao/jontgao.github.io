@@ -1,4 +1,5 @@
 'use client'
+import * as motion from "motion/react-client"
 import {SolidButton, ButtonProps} from "./button"
 
 export interface LinkButtonProps {
@@ -7,9 +8,15 @@ export interface LinkButtonProps {
 }
 export function LinkButton({linkUrl, buttonProps}: LinkButtonProps) {
     return (
-        <button onClick={(e) => { e.preventDefault(); window.location.href=linkUrl }}>
+        <motion.button
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.1 },
+          }}
+          onClick={(e) => { e.preventDefault(); window.location.href=linkUrl }}
+        >
             <SolidButton {...buttonProps}/>
-        </button>
+        </motion.button>
     )
 }
 interface LinkButtonRowProps {

@@ -27,7 +27,7 @@ export default async function Page({ params }: PageParams) {
     return (
         <div>
             <h1>{proj.metaTitle}</h1>
-            <div className="flex flex-col gap-[4rem]">
+            <div className="flex flex-col gap-[4rem] paragraph-text">
               {proj.content}
             </div>
         </div>
