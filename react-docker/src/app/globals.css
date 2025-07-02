@@ -57,6 +57,13 @@
   .linked-section {
     @apply scroll-mt-[6rem]
   }
+
+  .list-disc {
+    @apply ml-[2rem]
+  }
+  .list-disc>li {
+    @apply mb-[0.1rem]
+  }
 }
 
 @layer base {

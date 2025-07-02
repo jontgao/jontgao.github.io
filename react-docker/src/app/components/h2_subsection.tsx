@@ -8,10 +8,7 @@ export default function H2Subsection({ subsectionTitle, subsectionContent, parag
     return (
         <div>
             <h2> { subsectionTitle } </h2>
-            <div className="
-                flex flex-col gap-[1rem]
-                [&_img]:my-[2rem]
-            ">
+            <div className="flex flex-col gap-[1rem]">
                 { content }
             </div>
         </div>
