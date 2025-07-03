@@ -14,6 +14,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  params = await params
   const proj = lookUpProj({params})
  
   return {
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 }
 
 export default async function Page({ params }: PageParams) {
+    params = await params
     const proj = lookUpProj({params})
     return (
         <div>
