@@ -152,11 +152,47 @@ export const projData: Proj[] = [
             <TLDR cols={ [{title:"Skills",items:["Python", "Tensorflow", "Keras", "NumPy", "Pandas", "Matplotlib", "Scikit-Learn", "Optuna"]}, {title:"Timeline",items:["May 2022 - August 2021"]}, {title:"Role",items:["Machine Learning Intern"]}, {title:"Team",items:["Jonathan Gao", "Supervisors: Raj Sankaran, Bobby Jackson, and Seongha Park"]}] }/>,
             <LinkButtonRow linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
             <H2Subsection
-            subsectionTitle="About"
-            subsectionContent={[
+                subsectionTitle="About"
+                subsectionContent={[
                     <p>I interned at Argonne National Laboratory to train, optimize, and productionize a recurrent neural network to forecast solar energy production efficiency. I was very excited to train my model on one of Argonne's supercomputing clusters 😁. My model is to be used in over a hundred devices across the country as part of Argonne National Laboratory's Sage edge computing project.</p>,
                     <p>Check out my poster below!</p>,
                     <object data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
+                ]}
+            />,
+        ]
+    },
+    {
+        slug: 'foh',
+        metaTitle: 'Filter of Hope',
+        metaDesc: '',
+        thumbnailRef: '/proj/foh/thumbnail.png',
+        categories: [ ProjCategories.All, ProjCategories.Featured, ProjCategories.Leadership ],
+        content: [
+            <H2Subsection
+                subsectionTitle="The Gift of Clean Water"
+                subsectionContent={[
+                    <p>I went on two week-long Filter of Hope mission trips to different cities in a Caribbean country, one in 2022 and one in 2024. During the mission trip, we team up with a local church and translators to go door-to-door to connect personally with families and install life-changing water filters. This country's culture is so beautiful and welcoming, and it was truly an honor to spread even just the smallest drop of hope to such a beautiful people.</p>,
+                    <p>To attend the trip, I support raised (essentially: asking people to donate you money) over a thousand dollars in funds both years. That in and of itself was a new and frightening experience, but I learned a lot through it and would encourage anyone holding back from going on a trip like this to dive in!</p>,
+                    <p>We had truly the most gracious hosts, and were lucky enough to eat incredibly delicious food every day, even though food is in limited supply there. Over the course of my two trips, I got to see three different parts of the country, and every part is so incredibly beautiful. It's an experience I treasure. If you would like to get involved or donate, learn more about <a href="https://filterofhope.org/">Filter of Hope</a>.</p>,
+                    <p>Check out some photos below!</p>,
+                ]}
+            />,
+            <H2Subsection
+                subsectionTitle="2022"
+                subsectionContent={[
+                    <CaptionedImage src="/proj/foh/2022/IMG_1202.jpg" caption="Prayer on a rooftop overlooking the city." />,
+                    <CaptionedImage src="/proj/foh/2022/IMG_5673.jpeg" caption="A family we installed a filter for. I remember they were really invested in their TV show, so much so that they would pause our conversation for important scenes 😆." />,
+                    <CaptionedImage src="/proj/foh/2022/PXL_20220313_115023149.jpg" caption="A view of the city from our residence. It remains one of the most beautiful places I've been to." />,
+                    <CaptionedImage src="/proj/foh/2022/PXL_20220314_161216028.jpg" caption="A family we shared a filter with. The man in the pink shirt has THE MOST adorable kid, and we were able to gift them lots of toys!" />,
+                ]}
+            />,
+            <H2Subsection
+                subsectionTitle="2024"
+                subsectionContent={[
+                    <CaptionedImage src="/proj/foh/2024/IMG_2096.jpg" caption="The team at our home camp!" />,
+                    <CaptionedImage src="/proj/foh/2024/IMG_2879.jpg" caption="A woman we installed a filter for. Her house was on this hill with a stunning view. I also remember my teammate accidentally spilt a ton of water while installing the filter." />,
+                    <CaptionedImage src="/proj/foh/2024/IMG_4871.jpg" caption="Showing a woman how to clean the water filter." />,
+                    <CaptionedImage src="/proj/foh/2024/IMG_8631.jpg" caption="The country we were in had frequent blackouts (probably the majority of the time) due to limited electrical supply. As such, many of our evening team meetings were in the dark." />,
                 ]}
             />,
         ]
@@ -167,6 +203,7 @@ export const error404ProjData: Proj = {
     metaTitle: 'Blank Space',
     metaDesc: 'Page not found',
     thumbnailRef: '',
+    categories: [],
     content: [
         <p>I'm sorry, the page you're looking for cannot be found.</p>,
 
