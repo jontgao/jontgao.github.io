@@ -31,6 +31,18 @@ export interface ProjTLDR {
 }
 
 export const projData: Proj[] = [
+    
+    {
+        slug: 'siu',
+        metaTitle: 'ML @ SIU',
+        metaDesc: "I'm currently conducting machine learning research at SIU.",
+        thumbnailRef: '/proj/siu/thumbnail.png',
+        categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.ML ],
+        content: [
+            <TLDR cols={ [{title:"Skills",items:["Machine Learning"]}, {title:"Timeline",items:["December 2024 - Present"]}, {title:"Role",items:["Machine Learning Researcher"]}, {title:"Team",items:["LOAD Lab"]}] }/>,
+            <p>I'm currently conducting machine learning research at SIU. My work consists in two major areas: online learning for shifting data streams and time-series forecasting. More details coming soon!</p>
+        ]
+    },
     {
         slug: 'pillowfort',
         metaTitle: '"Pillowfort" Design',
@@ -78,11 +90,12 @@ export const projData: Proj[] = [
     {
         slug: 'hackillinois',
         metaTitle: 'HackIllinois',
-        metaDesc: 'I led our 54-person team to organize a 750-attendee, 3-day in-person HackIllinois 2023',
+        metaDesc: 'I led our 54-person team to organize a 750-attendee, 3-day in-person HackIllinois 2023.',
         thumbnailRef: '/proj/hack/logo.jpg',
         categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.Leadership ],
         content: [
             <TLDR cols={ [{title:"Quick Facts",items:["3-Day Hackathon", "750 attendees", "2 venues"]}, {title:"Timeline",items:["June 2022 - June 2023"]}, {title:"Role",items:["Co-Director"]}, {title:"Team",items:["54 staff members"]}] }/>,
+            <CaptionedImage src="/proj/hack/logo.jpg" caption="A branding image for HackIllinois 2023. Created by the HackIllinois 2023 Design Team."/>,
             <H2Subsection
                 subsectionTitle="9 Months of Planning"
                 subsectionContent={
@@ -164,7 +177,7 @@ export const projData: Proj[] = [
     {
         slug: 'foh',
         metaTitle: 'Filter of Hope',
-        metaDesc: '',
+        metaDesc: 'I went door-to-door installing life-changing water filters and connecting with local families.',
         thumbnailRef: '/proj/foh/thumbnail.png',
         categories: [ ProjCategories.All, ProjCategories.Featured, ProjCategories.Leadership ],
         content: [
