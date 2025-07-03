@@ -19,8 +19,7 @@ export interface Proj {
     metaTitle: string,
     metaDesc: string,
     thumbnailRef: string,
-    categories?: ProjCategories[],
-    tldr?: ProjTLDR,
+    categories: ProjCategories[],
     content: React.ReactElement[],
 }
 
@@ -35,10 +34,9 @@ export const projData: Proj[] = [
     {
         slug: 'pillowfort',
         metaTitle: '"Pillowfort" Design',
-        metaDesc: 'Description 1',
+        metaDesc: "I made this ethereal design for my high school's Hogwarts-esque dorm competition.",
         thumbnailRef: '/proj/pillowfort/thumbnail.png',
         categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.Design ],
-        tldr: { skills: ["Adobe Photoshop", "Adobe After Effects"], timeline: "March 2021", role: "Designer, Animator", team: ["dlsk"]},
         content: [
             <TLDR cols={[{title:"Skills",items:["Adobe Photoshop", "Adobe After Effects"]}, {title:"Role",items:["Designer", "Animator"]}]}/>,
             <video
@@ -56,7 +54,7 @@ export const projData: Proj[] = [
                     [
                         <p>I made this design for my high school's Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” which was our silly way of expressing an etheral, dreamy vibe. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version. This was one of those magical times as an artist where I immediately knew my creative vision going into the project—it felt like the design already existed, and I just had to fit the pieces together.</p>,
                         // TODO: add sketch
-                        <p>To make this design, I meshed together a ton of stock photos to create the ethereal landscape I envisioned. I should say I didn't use AI at all in this project; generative AI hadn't even hit the mainstream yet.</p>,
+                        <p>To make this design, I meshed together a ton of stock photos to create the ethereal landscape I envisioned. I should say I didn't use AI at all in this project; generative AI hadn't even hit the mainstream yet!</p>,
                         <CaptionedImage src="/proj/pillowfort/composite_preview.png" caption="Examples of some of the source images used and where they were included in the design. I feel the need to say I don't normally throw my jackets around; I used the jacket as a greenscreen for my pants." />,
                         <p>One fun part of this project was that I used Adobe Photoshop's 3D features to render the text in 3D. Fun fact: the 3D features I used are actually no longer available in Photoshop!</p>,
                         <CaptionedImage src="/proj/pillowfort/text.gif" caption="Progress of the titular text, including 3D extrusion and rendering, replacing the front face, and lighting effects." />,
@@ -83,7 +81,6 @@ export const projData: Proj[] = [
         metaDesc: 'I led our 54-person team to organize a 750-attendee, 3-day in-person HackIllinois 2023',
         thumbnailRef: '/proj/hack/logo.jpg',
         categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.Leadership ],
-        tldr: { skills: ["skdfj"], timeline: "June 2022 - June 2023", role: "Co-Director", team: ["54 team members"]},
         content: [
             <TLDR cols={ [{title:"Quick Facts",items:["3-Day Hackathon", "750 attendees", "2 venues"]}, {title:"Timeline",items:["June 2022 - June 2023"]}, {title:"Role",items:["Co-Director"]}, {title:"Team",items:["54 staff members"]}] }/>,
             <H2Subsection
@@ -124,7 +121,7 @@ export const projData: Proj[] = [
         metaTitle: 'Educational Game for CISTEME365',
         metaDesc: '',
         thumbnailRef: '/proj/cisteme365/thumbnail.png',
-        categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.SWE ],
+        categories: [ ProjCategories.All, ProjCategories.Featured, ProjCategories.SWE ],
         content: []
     },
     {
@@ -144,6 +141,25 @@ export const projData: Proj[] = [
         thumbnailRef: '/proj/hackstart/thumbnail.png',
         categories: [ ProjCategories.All, ProjCategories.Leadership ],
         content: []
+    },
+    {
+        slug: 'anl',
+        metaTitle: 'Solar Energy Forecasting @ Argonne National Laboratory',
+        metaDesc: 'I led our 54-person team to organize a 750-attendee, 3-day in-person HackIllinois 2023',
+        thumbnailRef: '/proj/anl/thumbnail.png',
+        categories: [ ProjCategories.All, ProjCategories.Featured, ProjCategories.ML ],
+        content: [
+            <TLDR cols={ [{title:"Skills",items:["Python", "Tensorflow", "Keras", "NumPy", "Pandas", "Matplotlib", "Scikit-Learn", "Optuna"]}, {title:"Timeline",items:["May 2022 - August 2021"]}, {title:"Role",items:["Machine Learning Intern"]}, {title:"Team",items:["Jonathan Gao", "Supervisors: Raj Sankaran, Bobby Jackson, and Seongha Park"]}] }/>,
+            <LinkButtonRow linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
+            <H2Subsection
+            subsectionTitle="About"
+            subsectionContent={[
+                    <p>I interned at Argonne National Laboratory to train, optimize, and productionize a recurrent neural network to forecast solar energy production efficiency. I was very excited to train my model on one of Argonne's supercomputing clusters 😁. My model is to be used in over a hundred devices across the country as part of Argonne National Laboratory's Sage edge computing project.</p>,
+                    <p>Check out my poster below!</p>,
+                    <object data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
+                ]}
+            />,
+        ]
     },
 ]
 export const error404ProjData: Proj = {

@@ -22,7 +22,7 @@ export default function FilteredGrid({filters, items, className}: FilteredGridPr
     }
 
     useEffect(() => {
-        setFilteredItems(items.filter((x) => x.categories && x.categories.includes(selectedFilter)))
+        setFilteredItems(items.filter((x) => x.categories.includes(selectedFilter)))
     }, [selectedFilter])
 
     return (
