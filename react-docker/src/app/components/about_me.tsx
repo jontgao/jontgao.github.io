@@ -20,7 +20,7 @@ export default function AboutMe() {
           <LinkButtonRow linkButtonProps={socials}/>
         </div>
       } right={
-        <img className="rounded-full aspect-square object-cover" src="https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjEwOTM3OTYxNjE5OTI0OTY5/jonathan-bailey.jpg" />
+        <img className="rounded-full aspect-square object-cover" src="/propic.jpg" />
       }/>
     </div>
   )

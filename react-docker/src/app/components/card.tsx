@@ -2,7 +2,7 @@ import * as motion from "motion/react-client"
 import { Proj } from "../proj/projData"
 
 
-export default function Card({slug, thumbnailRef, metaTitle}: Proj) {
+export default function Card({slug, externalLink, thumbnailRef, metaTitle}: Proj) {
   return (
     <motion.a
       layout
@@ -13,7 +13,7 @@ export default function Card({slug, thumbnailRef, metaTitle}: Proj) {
         scale: 1.03,
         transition: { duration: 0.1 },
       }}
-      href={`/proj/${(encodeURIComponent(slug))}`}
+      href={externalLink ? externalLink : `/proj/${(encodeURIComponent(slug))}`}
       className={`flex flex-col space-y-card-gap`}
     >
       <img

@@ -2,10 +2,11 @@ import H2Subsection from "../components/h2_subsection"
 import { LinkButtonRow } from "../components/link_button";
 import TLDR from "../components/tldr"
 import { CaptionedImage } from "../components/captioned_image";
-import FancyList from "../components/fancy_list"
+import TwoCol from "../components/two_col";
 
 export enum ProjCategories {
   Featured,
+  All,
   ML,
   SWE,
   Design,
@@ -14,6 +15,7 @@ export enum ProjCategories {
 
 export interface Proj {
     slug: string,
+    externalLink?: string, // if given, replaces slug
     metaTitle: string,
     metaDesc: string,
     thumbnailRef: string,
@@ -29,68 +31,58 @@ export interface ProjTLDR {
     team: string[],
 }
 
-
-const quickStats = [
-  {
-    title: "Skills",
-    items: ["React", "TypeScript", "Tailwind CSS"]
-  },
-  {
-    title: "Team Members",
-    items: ["Alice Smith", "Bob Lee", "Charlie Kim"]
-  },
-  {
-    title: "Timeline",
-    items: ["Jan 2024 - Mar 2024"]
-  },
-  {
-    title: "Tools",
-    items: ["Figma", "Jira", "GitHub"]
-  }
-];
 export const projData: Proj[] = [
     {
         slug: 'pillowfort',
         metaTitle: '"Pillowfort" Design',
         metaDesc: 'Description 1',
-        thumbnailRef: 'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg',
-        categories: [ ProjCategories.Featured ],
-        tldr: { skills: ["skdfj"], timeline: "sldkjfdf", role: "lsdj", team: ["dlsk"]},
+        thumbnailRef: '/proj/pillowfort/thumbnail.png',
+        categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.Design ],
+        tldr: { skills: ["Adobe Photoshop", "Adobe After Effects"], timeline: "March 2021", role: "Designer, Animator", team: ["dlsk"]},
         content: [
-            <TLDR cols={quickStats}/>,
+            <TLDR cols={[{title:"Skills",items:["Adobe Photoshop", "Adobe After Effects"]}, {title:"Role",items:["Designer", "Animator"]}]}/>,
+            <video
+                controls
+                loop
+                playsInline
+                className="w-full"
+            >
+                <source src="/proj/pillowfort/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>,
             <H2Subsection
                 subsectionTitle="Behind-the-Scenes"
                 subsectionContent={
                     [
-                        <p>I made this design for my high school as part of a Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” specifically an etheral, dreamy vibe. Here’s an inside look at the behind the scenes. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version.</p>,
-                        <img src="https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjE1MTk3MDAwMTcyMzE2MTc5/taylor-swift--the-eras-tour---london-uk.jpg"/>,
-                        <p>I played around with tons of stock photos to get the perfect ethereal look. Projects like this are my personal favorite. One fun part of this project was that I used Adobe Photoshop’s 3D features to render the text in 3D.</p>,
-                        <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/88477c99-c357-4758-a37e-b1b750215b2f/compose?aspectRatio=1.78&format=webp&width=1200"/>,
+                        <p>I made this design for my high school's Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” which was our silly way of expressing an etheral, dreamy vibe. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version. This was one of those magical times as an artist where I immediately knew my creative vision going into the project—it felt like the design already existed, and I just had to fit the pieces together.</p>,
+                        // TODO: add sketch
+                        <p>To make this design, I meshed together a ton of stock photos to create the ethereal landscape I envisioned. I should say I didn't use AI at all in this project; generative AI hadn't even hit the mainstream yet.</p>,
+                        <CaptionedImage src="/proj/pillowfort/composite_preview.png" caption="Examples of some of the source images used and where they were included in the design. I feel the need to say I don't normally throw my jackets around; I used the jacket as a greenscreen for my pants." />,
+                        <p>One fun part of this project was that I used Adobe Photoshop's 3D features to render the text in 3D. Fun fact: the 3D features I used are actually no longer available in Photoshop!</p>,
+                        <CaptionedImage src="/proj/pillowfort/text.gif" caption="Progress of the titular text, including 3D extrusion and rendering, replacing the front face, and lighting effects." />,
                         <p>I exported each “layer” of the image separately and imported them into Adobe After Effects, where I laid them out in a 3D scene. I then used After Effects to simulate camera movements and some slight animation (i.e., the moon and butterflies bobbing up and down).</p>,
-                        <p>I am super proud of the final outcome! I loved working with so many forms of digital media to create this piece.</p>
-                    ]
-                }
-            />,
-            <H2Subsection
-                subsectionTitle="Behind-the-Scenes"
-                subsectionContent={
-                    [
-                        <p>I made this design for my high school as part of a Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” specifically an etheral, dreamy vibe. Here’s an inside look at the behind the scenes. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version.</p>,
-                        <img src="https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjE1MTk3MDAwMTcyMzE2MTc5/taylor-swift--the-eras-tour---london-uk.jpg"/>,
-                        <p>I played around with tons of stock photos to get the perfect ethereal look. Projects like this are my personal favorite. One fun part of this project was that I used Adobe Photoshop’s 3D features to render the text in 3D.</p>,
-                        <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/88477c99-c357-4758-a37e-b1b750215b2f/compose?aspectRatio=1.78&format=webp&width=1200"/>,
-                        <p>I exported each “layer” of the image separately and imported them into Adobe After Effects, where I laid them out in a 3D scene. I then used After Effects to simulate camera movements and some slight animation (i.e., the moon and butterflies bobbing up and down).</p>,
-                        <p>I am super proud of the final outcome! I loved working with so many forms of digital media to create this piece.</p>
+                        <video
+                            controls
+                            loop
+                            playsInline
+                            className="w-full"
+                        >
+                            <source src="/proj/pillowfort/3d.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>,
+                        <p>As a final touch, I edited and added a short audio clip of ocean waves. I am super proud of the final outcome! I loved working with so many forms of digital media to create this piece.</p>,
+                        <p className="text-style-card-subtitle">Stock image & audio credits: Adrianna Calvo, Cindy Gustafson, Daniel Kux, David Kopacz, Eberhard Grossgasteiger, Elina Sazonova, Iconcom, Jess Vide, Nick Bondarev, Noted451, Pixabay, Rachel Claire, Ruvim, Samuel Walker, Szabó Viktor, Tobias Bjørkli</p>,
                     ]
                 }
             />,
         ]
-    }, {
+    },
+    {
         slug: 'hackillinois',
         metaTitle: 'HackIllinois',
         metaDesc: 'I led our 54-person team to organize a 750-attendee, 3-day in-person HackIllinois 2023',
         thumbnailRef: '/proj/hack/logo.jpg',
-        categories: [ ProjCategories.Featured, ProjCategories.Leadership ],
+        categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.Leadership ],
         tldr: { skills: ["skdfj"], timeline: "June 2022 - June 2023", role: "Co-Director", team: ["54 team members"]},
         content: [
             <TLDR cols={ [{title:"Quick Facts",items:["3-Day Hackathon", "750 attendees", "2 venues"]}, {title:"Timeline",items:["June 2022 - June 2023"]}, {title:"Role",items:["Co-Director"]}, {title:"Team",items:["54 staff members"]}] }/>,
@@ -125,51 +117,42 @@ export const projData: Proj[] = [
                 }
             />,
         ]
-    }, {
-        slug: 'page-2',
-        metaTitle: 'Pa ge 2',
-        metaDesc: 'Description 2',
-        thumbnailRef: 'https://media.istockphoto.com/id/825383494/photo/business-man-pushing-large-stone-up-to-hill-business-heavy-tasks-and-problems-concept.jpg?s=612x612&w=0&k=20&c=wtqvbQ6OIHitRVDPTtoT_1HKUAOgyqa7YzzTMXqGRaQ=',
-        categories: [ ProjCategories.Featured, ProjCategories.Leadership ],
-        tldr: { skills: ["skdfj"], timeline: "sldkjfdf", role: "Co-Director", team: ["54 staff members"]},
-        content: [
-            <TLDR cols={quickStats}/>,
-            <H2Subsection
-                subsectionTitle="Behind-the-Scenes"
-                subsectionContent={
-                    [
-                        <p>I made this design for my high school as part of a Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” specifically an etheral, dreamy vibe. Here’s an inside look at the behind the scenes. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version.</p>,
-                        <img src="https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjE1MTk3MDAwMTcyMzE2MTc5/taylor-swift--the-eras-tour---london-uk.jpg"/>,
-                        <p>I played around with tons of stock photos to get the perfect ethereal look. Projects like this are my personal favorite. One fun part of this project was that I used Adobe Photoshop’s 3D features to render the text in 3D.</p>,
-                        <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/88477c99-c357-4758-a37e-b1b750215b2f/compose?aspectRatio=1.78&format=webp&width=1200"/>,
-                        <p>I exported each “layer” of the image separately and imported them into Adobe After Effects, where I laid them out in a 3D scene. I then used After Effects to simulate camera movements and some slight animation (i.e., the moon and butterflies bobbing up and down).</p>,
-                        <p>I am super proud of the final outcome! I loved working with so many forms of digital media to create this piece.</p>
-                    ]
-                }
-            />,
-            <H2Subsection
-                subsectionTitle="Behind-the-Scenes"
-                subsectionContent={
-                    [
-                        <p>I made this design for my high school as part of a Hogwarts-esque dorm competition. Our color was purple, and our theme was “Pillowfort,” specifically an etheral, dreamy vibe. Here’s an inside look at the behind the scenes. I first sketched a couple designs in my bullet journal, and then used Photoshop to create an unanimated version.</p>,
-                        <img src="https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MjE1MTk3MDAwMTcyMzE2MTc5/taylor-swift--the-eras-tour---london-uk.jpg"/>,
-                        <p>I played around with tons of stock photos to get the perfect ethereal look. Projects like this are my personal favorite. One fun part of this project was that I used Adobe Photoshop’s 3D features to render the text in 3D.</p>,
-                        <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/88477c99-c357-4758-a37e-b1b750215b2f/compose?aspectRatio=1.78&format=webp&width=1200"/>,
-                        <p>I exported each “layer” of the image separately and imported them into Adobe After Effects, where I laid them out in a 3D scene. I then used After Effects to simulate camera movements and some slight animation (i.e., the moon and butterflies bobbing up and down).</p>,
-                        <p>I am super proud of the final outcome! I loved working with so many forms of digital media to create this piece.</p>
-                    ]
-                }
-            />,
-        ]
+    },
+    {
+        slug: 'cisteme365',
+        externalLink: 'https://github.com/junevanlerberghe/CISTEME365',
+        metaTitle: 'Educational Game for CISTEME365',
+        metaDesc: '',
+        thumbnailRef: '/proj/cisteme365/thumbnail.png',
+        categories: [ ProjCategories.Featured, ProjCategories.All, ProjCategories.SWE ],
+        content: []
+    },
+    {
+        slug: 'beatdrop',
+        externalLink: 'https://github.com/CS222-UIUC/BeatDrop',
+        metaTitle: 'BeatDrop Rhythm Game',
+        metaDesc: '',
+        thumbnailRef: '/proj/beatdrop/thumbnail.png',
+        categories: [ ProjCategories.All, ProjCategories.SWE ],
+        content: []
+    },
+    {
+        slug: 'hackstart',
+        externalLink: 'https://hackstart.hackillinois.org/',
+        metaTitle: 'HackStart',
+        metaDesc: '',
+        thumbnailRef: '/proj/hackstart/thumbnail.png',
+        categories: [ ProjCategories.All, ProjCategories.Leadership ],
+        content: []
     },
 ]
 export const error404ProjData: Proj = {
     slug: 'error-404',
-    metaTitle: 'Page Not Found',
+    metaTitle: 'Blank Space',
     metaDesc: 'Page not found',
-    thumbnailRef: 'todo',
+    thumbnailRef: '',
     content: [
-        <p>We couldn't find that page.</p>,
+        <p>I'm sorry, the page you're looking for cannot be found.</p>,
 
     ]
 }

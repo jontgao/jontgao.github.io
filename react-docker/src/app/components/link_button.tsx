@@ -8,15 +8,15 @@ export interface LinkButtonProps {
 }
 export function LinkButton({linkUrl, buttonProps}: LinkButtonProps) {
     return (
-        <motion.button
+        <motion.a
           whileHover={{
             scale: 1.05,
             transition: { duration: 0.1 },
           }}
-          onClick={(e) => { e.preventDefault(); window.location.href=linkUrl }}
+          href={linkUrl}
         >
             <SolidButton {...buttonProps}/>
-        </motion.button>
+        </motion.a>
     )
 }
 interface LinkButtonRowProps {
