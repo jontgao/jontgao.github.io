@@ -302,12 +302,14 @@ export const projData: Proj[] = [
 ]
 export const error404ProjData: Proj = {
     slug: 'error-404',
-    metaTitle: 'Blank Space',
+    metaTitle: 'Page Not Found',
     metaDesc: 'Page not found',
     thumbnailRef: '',
     categories: [],
     content: [
-        <p>I'm sorry, the page you're looking for cannot be found.</p>,
-
+        <>
+            <img src="/proj/pikachu.gif" alt="Pikachu attacking—but failing—a tree." />
+            <p>This page is a blank space.</p>
+        </>
     ]
 }
