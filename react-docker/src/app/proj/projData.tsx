@@ -13,36 +13,31 @@ export enum ProjCategories {
 }
 export const projFilters = [
   {
-    id: 0,
     text: "Featured",
-    category: [ProjCategories.Featured],
+    categories: [ProjCategories.Featured],
   },
 //   {
-//     id: 5,
 //     text: "All",
-//     category: Object.values(ProjCategories),
+//     categories: Object.values(ProjCategories),
 //   },
   {
-    id: 1,
     text: "AI/ML",
-    category: [ProjCategories.ML],
+    categories: [ProjCategories.ML],
   },
   {
-    id: 2,
     text: "Software Engineering",
-    category: [ProjCategories.SWE],
+    categories: [ProjCategories.SWE],
   },
   {
-    id: 3,
     text: "Design",
-    category: [ProjCategories.Design],
+    categories: [ProjCategories.Design],
   },
   {
-    id: 4,
     text: "Other",
-    category: [ProjCategories.Leadership],
+    categories: [ProjCategories.Leadership],
   },
 ]
+export const DEFAULT_PROJFILTER = {text: "Featured", categories: [ProjCategories.Featured],}
 
 export interface Proj {
     slug: string,

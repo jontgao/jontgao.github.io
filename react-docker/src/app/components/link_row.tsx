@@ -1,7 +1,6 @@
 import {navLinks} from './link_data'
 
 interface LinkProps {
-  id: number,
   text: string,
   linkUrl: string
 }

@@ -25,15 +25,12 @@ export const socials: LinkButtonProps[] = [
 
 export const navLinks = [
   {
-    id: 0,
     text: "Home",
     linkUrl: "/"
   }, {
-    id: 1,
     text: "About",
     linkUrl: "#about"
   }, {
-    id: 2,
     text: "Resume",
     linkUrl: RESUME_LINK,
   }
