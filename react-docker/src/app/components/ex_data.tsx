@@ -1,5 +1,4 @@
 import {ProjCategories} from "../proj/projData"
-import {iconMap} from "./icon"
 import {LinkButtonProps} from "./link_button"
 
 export const socials: LinkButtonProps[] = [
@@ -20,34 +19,6 @@ export const socials: LinkButtonProps[] = [
     buttonProps: {
       text: "Resume",
     }
-  }
-]
-
-export const filters = [
-  {
-    id: 0,
-    text: "Featured",
-    category: ProjCategories.Featured,
-  }, {
-    id: 5,
-    text: "All",
-    category: ProjCategories.All,
-  }, {
-    id: 1,
-    text: "AI/ML",
-    category: ProjCategories.ML,
-  }, {
-    id: 2,
-    text: "Software Engineering",
-    category: ProjCategories.SWE,
-  }, {
-    id: 3,
-    text: "Design",
-    category: ProjCategories.Design,
-  }, {
-    id: 4,
-    text: "Leadership",
-    category: ProjCategories.Leadership,
   }
 ]
 

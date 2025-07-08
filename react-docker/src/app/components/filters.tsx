@@ -14,15 +14,16 @@ interface FilteredGridProps {
     className?: string;
 }
 export default function FilteredGrid({filters, items, className}: FilteredGridProps) {
-    const [selectedFilter, setSelectedFilter] = useState(ProjCategories.Featured)
+    const [selectedFilter, setSelectedFilter] = useState(filters.at(0))
     const [filteredItems, setFilteredItems] = useState(items)
 
-    const handleFilterButtonClick = (selectedFilter: ProjCategories) =>  {
+    const handleFilterButtonClick = (selectedFilter: FilterProps) =>  {
         setSelectedFilter(selectedFilter)
     }
 
     useEffect(() => {
-        setFilteredItems(items.filter((x) => x.categories.includes(selectedFilter)))
+        const filteredCategories = new Set(selectedFilter.category)
+        setFilteredItems(items.filter((x) => x.categories.some(c => filteredCategories.has(c))))
     }, [selectedFilter])
 
     return (
@@ -38,15 +39,15 @@ export default function FilteredGrid({filters, items, className}: FilteredGridPr
  */
 interface FilterRowProps {
     filterProps: FilterProps[];
-    handleFilterButtonClick: (selectedFilter: ProjCategories) => void;
-    selectedFilter: ProjCategories;
+    handleFilterButtonClick: (selectedFilter: FilterProps) => void;
+    selectedFilter: FilterProps;
     className?: string;
 }
 function FilterRow({filterProps, handleFilterButtonClick, selectedFilter, className}: FilterRowProps) {
     return (
         <div className={`button-row-style gap-x-[2rem] mb-[2rem] ${className || ''}`}>
             {filterProps.map((filterProp) =>
-                <Filter key={filterProp.id} {...filterProp} onClick={() => handleFilterButtonClick(filterProp.category)} isChecked={filterProp.category === selectedFilter}/>
+                <Filter key={filterProp.id} {...filterProp} onClick={() => handleFilterButtonClick(filterProp)} isChecked={filterProp === selectedFilter}/>
             )}
         </div>
     )
@@ -58,7 +59,7 @@ function FilterRow({filterProps, handleFilterButtonClick, selectedFilter, classN
 interface FilterProps {
     id: number;
     text: string;
-    category: ProjCategories;
+    category: ProjCategories[];
     onClick: () => void;
     isChecked: boolean;
     className?: string;
