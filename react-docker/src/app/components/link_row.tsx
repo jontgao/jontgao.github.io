@@ -1,4 +1,4 @@
-import {navLinks} from './ex_data'
+import {navLinks} from './link_data'
 
 interface LinkProps {
   id: number,

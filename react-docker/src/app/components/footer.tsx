@@ -1,5 +1,5 @@
 import { LinkRow } from "./link_row";
-import {footerLinks} from "./ex_data"
+import {footerLinks} from "./link_data"
 
 interface FooterProps {
     className?: string

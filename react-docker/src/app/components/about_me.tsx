@@ -1,6 +1,6 @@
 import TwoCol from './two_col'
 import {LinkButtonRow} from './link_button'
-import {socials} from './ex_data'
+import {socials} from './link_data'
 
 export default function AboutMe() {
   return (
