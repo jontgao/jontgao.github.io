@@ -11,7 +11,7 @@ export function LinkRow({linkProps}: LinkRowProps) {
   return (
     <div className={`flex flex-row body-text gap-[2rem]`}>
       {
-        linkProps.map(x => <a href={x.linkUrl}>{x.text}</a>)
+        linkProps.map(x => <a href={x.linkUrl} key={x.text}>{x.text}</a>)
       }
     </div>
   )

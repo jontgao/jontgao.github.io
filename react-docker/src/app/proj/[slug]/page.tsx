@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import { projData, error404ProjData, Proj } from "../projData"
 
 interface PageParams {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-function lookUpProj({ params }: PageParams): Proj {
+function lookUpProj( params : { slug: string }): Proj {
   return projData.find(p => p.slug === params.slug) || error404ProjData
 }
 
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  params = await params
-  const proj = lookUpProj({params})
+  const awaitedParams = await params
+  const proj = lookUpProj(awaitedParams)
  
   return {
     title: proj.metaTitle,
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 }
 
 export default async function Page({ params }: PageParams) {
-    params = await params
-    const proj = lookUpProj({params})
+    const awaitedParams = await params
+    const proj = lookUpProj(awaitedParams)
     return (
         <div>
             <h1>{proj.metaTitle}</h1>
