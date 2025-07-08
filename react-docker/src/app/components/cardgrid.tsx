@@ -13,7 +13,7 @@ export interface CardGridProps {
 export default function CardGrid({projs, className}: CardGridProps) {
     return (
         // TODO: smooth grid height animation (i.e., so sections below don't "jump" to new grid height)
-        <div className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+        <div className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 ${'' /*lg:grid-cols-3*/}
                          gap-x-card-grid-gap-x gap-y-card-grid-gap-y
                          ${className || ''}`}
         >
