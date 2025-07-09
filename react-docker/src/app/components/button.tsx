@@ -1,9 +1,9 @@
-import Icon from "./icon";
-import {iconNameType} from "./icon";
+import Icon from "./easyIcon";
+import {easyIconNameType} from "./easyIcon";
 
 export interface ButtonProps {
     text: string;
-    iconName?: iconNameType;
+    iconName?: easyIconNameType;
     className?: string;
 }
 export function SolidButton({text, iconName, className}: ButtonProps) {
