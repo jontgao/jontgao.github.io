@@ -64,7 +64,7 @@ interface FilterProps {
     className?: string;
 }
 function Filter(filterProp: FilterProps) {
-    let button = filterProp.isChecked
+    const button = filterProp.isChecked
         ? (<SolidButton text={filterProp.text} iconName="checked" className={filterProp.className}/>)
         : (<HollowButton text={filterProp.text} className={filterProp.className} />)
     return (

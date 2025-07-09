@@ -14,7 +14,7 @@ const subtitles = [
     "Mario Kart Racer",
 ]
 
-const NameplateStar = forwardRef<HTMLDivElement>((props, scope) => {
+const NameplateStar = forwardRef<HTMLDivElement>(function NameplateStar(props, scope) {
     return (
         <div ref={scope} className="nameplate-star">
             <motion.img
@@ -27,24 +27,24 @@ const NameplateStar = forwardRef<HTMLDivElement>((props, scope) => {
             />
         </div>
     )
-})
+});
 
-const NameplateSubtitle = forwardRef<HTMLDivElement>((props, scope) => {
+const NameplateSubtitle = forwardRef<HTMLDivElement>(function NameplateSubtitle(props, scope) {
     const [index, setIndex] = useState(0)
-    useEffect(() => {
-        const firstTimeout = setTimeout(() => {
-            setIndex(i => (i + 1) % subtitles.length);
+    useEffect(function () {
+        const firstTimeout = setTimeout(function () {
+            setIndex(function (i) { return (i + 1) % subtitles.length; });
 
-            const interval = setInterval(() => {
-            setIndex(i => (i + 1) % subtitles.length);
+            const interval = setInterval(function () {
+                setIndex(function (i) { return (i + 1) % subtitles.length; });
             }, 2500);
 
-            return () => clearInterval(interval);
-        }, 2500*2);
+            return function () { clearInterval(interval); };
+        }, 2500 * 2);
 
-        return () => clearTimeout(firstTimeout)
-    }, [])
-    
+        return function () { clearTimeout(firstTimeout); }
+    }, []);
+
     return (
         <AnimatePresence mode="wait">
             <motion.div
@@ -60,9 +60,9 @@ const NameplateSubtitle = forwardRef<HTMLDivElement>((props, scope) => {
             </motion.div>
         </AnimatePresence>
     )
-})
+});
 
-const NameplateText = forwardRef<HTMLDivElement>((props, scope) => {
+const NameplateText = forwardRef<HTMLDivElement>(function NameplateText(props, scope) {
     return (
         <div ref={scope} className="w-full h-full flex flex-col justify-end items-center pb-[1.17113rem] nameplate-text">
             <div className="flex flex-col gap-[1.08rem] text-onwhite">
@@ -71,13 +71,13 @@ const NameplateText = forwardRef<HTMLDivElement>((props, scope) => {
             </div>
         </div>
     )
-})
+});
 
-const Nameplate = () => {
+export default function Nameplate() {
     const [scope, animate] = useAnimate()
 
-    useEffect(() => {
-        const enterSequence = async () => {
+    useEffect(function () {
+        const enterSequence = async function () {
             await animate(".nameplate-star, .nameplate-text, .nameplate-subtitle", { opacity: 0 }, { duration: 0 })
             await animate(scope.current, { opacity: 1 }, { duration: 0 })
             await animate(scope.current, { transform: "scaleX(1)" }, { duration: 0.2, delay: 0.15 })
@@ -105,4 +105,3 @@ const Nameplate = () => {
         </div>
     )
 }
-export default Nameplate

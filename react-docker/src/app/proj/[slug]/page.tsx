@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import React from "react"
 import { projData, error404ProjData, Proj } from "../projData"
 
 interface PageParams {
@@ -30,7 +31,11 @@ export default async function Page({ params }: PageParams) {
         <div>
             <h1>{proj.metaTitle}</h1>
             <div className="flex flex-col gap-[4rem] paragraph-text">
-              {proj.content}
+              {proj.content.map((el, idx) =>
+                React.isValidElement(el)
+                  ? React.cloneElement(el, { key: el.key || idx })
+                  : el
+              )}
             </div>
         </div>
     )

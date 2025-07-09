@@ -5,7 +5,6 @@ interface SectionProps {
   content?: React.ReactNode;
   className?: string;
 }
-interface SectionWrapperProps extends SectionProps {}
 
 export function Section({children, content, className}: SectionProps) {
   return (
@@ -19,7 +18,7 @@ export function Section({children, content, className}: SectionProps) {
     </div>
   )
 }
-export function SectionWrapper({children, content, className}: SectionWrapperProps) {
+export function SectionWrapper({children, content, className}: SectionProps) {
   return (
     <div className={`
       flex flex-col items-center my-[10rem] w-full ${className || ''}

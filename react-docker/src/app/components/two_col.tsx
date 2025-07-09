@@ -1,5 +1,3 @@
-import Icon from './icon'
-
 export interface TwoColProps {
   left: React.ReactNode;
   right: React.ReactNode;
@@ -10,7 +8,7 @@ export interface TwoColProps {
 export default function TwoCol({left, right, leftFraction, className}: TwoColProps) {
   let lw = leftFraction ? leftFraction : "2/3"
   let rw
-  let [numer, denom] = lw.split('/').map(Number)
+  const [numer, denom] = lw.split('/').map(Number)
   if ((numer < denom) && (denom != 0)) {
     rw = `${(denom-numer)}/${denom}`
   } else {
