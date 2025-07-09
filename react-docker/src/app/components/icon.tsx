@@ -1,20 +1,15 @@
-import CheckIcon from "./icons/check.jsx"
-import GithubIcon from "./icons/github-mark.jsx"
-import LinkedInIcon from "./icons/LinkedIn_icon.jsx"
-
 export const iconMap = {
-    checked: CheckIcon,
-    github: GithubIcon,
-    linkedin: LinkedInIcon
+    checked: "/icons/check.svg",
+    github: "/icons/github-mark.svg",
+    linkedin: "/icons/LinkedIn_icon.svg"
 }
 
 export type iconNameType = keyof typeof iconMap
 
 export default function Icon({name}: {name: iconNameType}) {
-    const IconComponent = iconMap[name]
+    const iconSvg = iconMap[name]
     return (
-        <IconComponent
-            className="w-icon-w h-icon-w fill-pitch"
+        <img src={iconSvg} className="w-icon-w h-icon-w fill-pitch"
         />
     )
   }
