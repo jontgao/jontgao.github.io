@@ -18,7 +18,7 @@ const NameplateStar = forwardRef<HTMLDivElement>(function NameplateStar(props, s
     return (
         <div ref={scope} className="nameplate-star">
             <motion.img
-                src="star.svg"
+                src="bg/star.svg"
                 animate={{ rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
                 className="
