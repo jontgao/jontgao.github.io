@@ -21,7 +21,7 @@ export default function AboutMe() {
         </div>
       } right={
         <img className="rounded-full aspect-square object-cover" src="/propic.jpg" alt="" />
-      }/>
+      } />
     </div>
   )
 }

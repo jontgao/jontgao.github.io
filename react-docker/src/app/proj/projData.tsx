@@ -100,10 +100,10 @@ export const projData: Proj[] = [
                 subsectionTitle="Snapshots"
                 subsectionContent={[
                     <p key="hackillinois-3-0">Check out a couple photos of the event below!</p>,
-                    <CaptionedImage key="hackillinois-3-1" src="/proj/hack/opening_ceremony.jpg" caption="Attendees watching the HackIllinois Opening Ceremony. Photo by Ashay Parikh."/>,
+                    <CaptionedImage key="hackillinois-3-1" src="/proj/hack/opening_ceremony.JPG" caption="Attendees watching the HackIllinois Opening Ceremony. Photo by Ashay Parikh."/>,
                     <CaptionedImage key="hackillinois-3-2" src="/proj/hack/food.jpg" caption="HackIllinois staff members serving food to attendees. Photo by Emily Tung."/>,
                     <CaptionedImage key="hackillinois-3-3" src="/proj/hack/code_in_the_dark.jpg" caption="HackIllinois attendees code in a dark, neon-lit room at the long-time favorite event 'Code in the Dark.' Photo by Emily Tung."/>,
-                    <CaptionedImage key="hackillinois-3-4" src="/proj/hack/staff.jpg" caption="(Almost) the entire HackIllinois staff. Peek me and my incredible Co-Director Deeya at the bottom! Photo by Ashay Parikh."/>,
+                    <CaptionedImage key="hackillinois-3-4" src="/proj/hack/staff.JPG" caption="(Almost) the entire HackIllinois staff. Peek me and my incredible Co-Director Deeya at the bottom! Photo by Ashay Parikh."/>,
                 ]}
             />,
         ]

@@ -6,7 +6,7 @@ export interface TwoColProps {
 }
 
 export default function TwoCol({left, right, leftFraction, className}: TwoColProps) {
-  let lw = leftFraction ? leftFraction : "2/3"
+  let lw = leftFraction ? leftFraction : "2/3" // TODO: fix this not working
   let rw
   const [numer, denom] = lw.split('/').map(Number)
   if ((numer < denom) && (denom != 0)) {
