@@ -24,7 +24,7 @@ export default function FilteredGrid({filters, items, className}: FilteredGridPr
     useEffect(() => {
         const filteredCategories = new Set(selectedFilter.categories)
         setFilteredItems(items.filter((x) => x.categories.some(c => filteredCategories.has(c))))
-    }, [selectedFilter])
+    }, [selectedFilter, items])
 
     return (
         <div className={`${className || ''}`}>

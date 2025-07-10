@@ -10,7 +10,7 @@ export default function easyIcon({name}: {name: easyIconNameType}) {
     const iconSvg = easyIconMap
 [name]
     return (
-        <img src={iconSvg} className="w-easy-icon-w h-easy-icon-w fill-pitch" />
+        <img src={iconSvg} className="w-easy-icon-w h-easy-icon-w fill-pitch" alt={name} />
     )
   }
 

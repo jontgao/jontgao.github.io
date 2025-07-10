@@ -20,7 +20,7 @@ export default function AboutMe() {
           <LinkButtonRow linkButtonProps={socials}/>
         </div>
       } right={
-        <img className="rounded-full aspect-square object-cover" src="/propic.jpg" />
+        <img className="rounded-full aspect-square object-cover" src="/propic.jpg" alt="" />
       }/>
     </div>
   )
