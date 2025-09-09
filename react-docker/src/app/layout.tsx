@@ -1,6 +1,10 @@
 import './globals.css'
-import NavLinkRow from './components/link_row';
-import Footer from './components/footer';
+import NavLinkRow from './components/link_row'
+import Footer from './components/footer'
+import ReactGA from 'react-ga4'
+// import {useEffect} from "react"
+
+const TRACKING_ID = "G-9G98RJEJR1"
 
 
 export const metadata = {
@@ -13,6 +17,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //
+  // working on google analytics
+  //
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // useEffect(() => {
+  //   ReactGA.initialize(TRACKING_ID);
+  //   // Send pageview with a custom path
+  //   ReactGA.send({ hitType: "pageview", page: "/landingpage", title: "Landing Page" });
+  // }, [])
+
   return (
     <html lang="en">
       <head>
