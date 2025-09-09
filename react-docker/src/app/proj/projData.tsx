@@ -119,11 +119,46 @@ export const projData: Proj[] = [
             <LinkButtonRow key="anl-1" linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
             <H2Subsection
                 key="anl-2"
-                subsectionTitle="About"
+                subsectionTitle="Introduction"
                 subsectionContent={[
-                    <p key="anl-2-0">I interned at Argonne National Laboratory to train, optimize, and productionize a recurrent neural network to forecast solar energy production efficiency. I was very excited to train my model on one of Argonne's supercomputing clusters 😁. My model is to be used in over a hundred devices across the country as part of Argonne National Laboratory's Sage edge computing project.</p>,
-                    <p key="anl-2-1">Check out my poster below!</p>,
-                    <object key="anl-2-2" data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
+                    <p key="anl-2-0">During my internship at <b>Argonne National Laboratory</b>, I developed and optimized a <b>recurrent neural network</b> (RNN) model for <b>forecasting solar energy production efficiency</b>. This work supported Argonne's nationwide Sage edge computing initiative, where my model is slated for deployment in hundreds of sensor devices across the United States.</p>,
+                    <p key="anl-2-2">To summarize my experience and impact, I</p>,
+                    <ul key="anl-2-3" className="list-disc">
+                        <li><b>End-to-end trained, optimized, and deployed ML models</b> at a premier national lab.</li>
+                        <li>Leveraged Argonne's <b>supercomputing clusters</b> for model training, enabling rapid experimentation with large datasets and complex architectures.</li>
+                        <li>Developed <b>edge-ready ML models</b>, tailored for robust performance in distributed sensor networks.</li>
+                    </ul>,
+                ]}
+            />,
+            <H2Subsection
+                key="anl-3"
+                subsectionTitle="Technical Approach"
+                subsectionContent={[
+                    <p key="anl-3-0">My predictive pipeline leveraged deep learning techniques to predict solar irradiance (a metric of how much solar energy will be produced based on meteorlogical factors) using historical irradiance and cloud coverage data. Energy forecasting, like done here, is a critical challenge for improving the effectiveness of renewable energy systems.</p>,
+                    <p key="anl-3-1">I implemented and evaluated multiple RNN architectures, including standard RNNs, LSTMs, and GRUs. Additionally, I sourced, analyzed, and pre-processed around six years of data. This process included:</p>,
+                    <ul key="anl-3-2" className="list-disc">
+                        <li><b>Sourcing data:</b> I requested and obtained access to relevant datasets.</li>
+                        <li><b>Pre-processing:</b> I analyzed and pre-processed datasets for quality and compatibility with time-series architectures. This included identifying lapses in datasets and determining the ideal cleaning methods.</li>
+                        <li><b>Training:</b> I explored architectures and integrated frameworks for optimization search, including cell types, number of layer, and layer sizes.</li>
+                        <li><b>Evaluation:</b> I benchmarked loss functions to gauge forecast precision for each trial.</li>
+                    </ul>,
+                    <p key="anl-3-3">To improve performance further, I implemented a Mixture of Experts season-based model (effectively a parent model consisting of four child models, one fine-tuned for each meteorological season).</p>,
+                ]}
+            />,
+            <H2Subsection
+                key="anl-4"
+                subsectionTitle="Results & Deployment"
+                subsectionContent={[
+                    <p key="anl-4-0">After extensive training, the best-performing model was a <b>1-layer GRU with 32 neurons</b>. I then turned my focus towards deploying the model for Argonne's Sage network:</p>,
+                    <ul key="anl-4-1" className="list-disc">
+                        <li><b>Model compression:</b> I compressed the model using TFLite (now known as LiteRT) to enable the model to best perform on edge devices.</li>
+                        <li><b>Deployment:</b> I developed and integrated a <a href="https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting">plug-in</a> to deploy the model on edge devices, enabling real-time data collection and on-device inference.</li>
+                    </ul>,
+                    <p key="anl-4-2">Ultimately, my work at Argonne grew my skills in ML model design, implementation, and deployment in real-world settings. Further, I gained extensive hands-on experience with data pre-processing and handling oh-so-many data quality issues. I am very grateful to have had the opportunity to collaborate with my supervisors in such a high-impact project.</p>,
+                    <p key="anl-4-2">While newer architectures are now leading the field in time-series prediction, my work ar Argonne played a critical role in developing an effective forecasting model for time-dependent data, especially with the constraints of edge deployment. As I have continued to learn about the ever-evolving energy field (like with my <a href="/proj/siu">research at SIU</a>), I hope to create further impact in projects like this.</p>,
+                    <p key="anl-4-2">My resulting plug-in and poster for my project can be viewed below.</p>,
+                    <LinkButtonRow key="anl-1" linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
+                    <object key="anl-2-5" data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
                 ]}
             />,
         ]
@@ -163,16 +198,16 @@ export const projData: Proj[] = [
                 key="diffusion-mnist-1"
                 subsectionTitle="Diffusion"
                 subsectionContent={[
-                    <p key="diffusion-mnist-1-0">For my Computer Vision class (CS444 at UIUC), I implemented and trained a diffusion model to generate images of numbers. This was my first time working with diffusion models, and I learned a lot in the process of building one from the ground-up.</p>,
+                    <p key="diffusion-mnist-1-0">For my Computer Vision class (CS444 at UIUC), I implemented and trained a diffusion model to generate images of numbers. This project was my first hands-on experience with diffusion models—a state-of-the-art generative approach recently popularized by systems like DALL-E and Stable Diffusion. Building the model from scratch, I deepened my understanding of both theoretical and practical aspects of modern generative AI.</p>,
                     <CaptionedImage key="diffusion-mnist-1-1" src="/proj/diffusion-mnist/thumbnail.png" caption="" />,
-                    <p key="diffusion-mnist-1-2">Diffusion models work by adding random noise to training data and learning how to reverse the noise. This particular model was based off <a href="https://arxiv.org/abs/2006.11239">a paper</a> by Ho et. al. We take a dataset of images (in this case, the <a href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset">MNIST dataset</a> of handwritten numbers) and slowly add noise to the image. We train the diffusion model to "denoise" the noisy image to approximate the original image. After training, we input an image of complete noise to the model. Using the same process of denoising, the model effectively generates an image of a handwritten digit.</p>,
-                    <p key="diffusion-mnist-1-3">The first version of the model "denoised" an image with 50% noise in one singular step. This served primarily as a warmup to iron out the major steps in denoising.</p>,
+                    <p key="diffusion-mnist-1-2">Diffusion models operate by progressively adding noise to training images and learning to reverse this process, effectively "denoising" an image to recover or generate meaningful content. My implementation was based on the foundational work by <a href="https://arxiv.org/abs/2006.11239">Ho et. al</a>, which introduced a principled framework for training such models. We take a dataset of images (in this case, the <a href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset">MNIST dataset</a> of handwritten numbers) and slowly add noise to the image. We train the diffusion model to "denoise" the noisy image to approximate the original image. After training, we input an image of complete noise to the model. Using the same process of denoising, the model effectively generates an image of a handwritten digit.</p>,
+                    <p key="diffusion-mnist-1-3">Initially, I built a simple variant that denoised images corrupted with 50% random noise in a single step—this helped me validate the core data pipeline and model structure.</p>,
                     <CaptionedImage key="diffusion-mnist-1-4" src="/proj/diffusion-mnist/denoising.png" caption="Denoising images. The left column shows the original image, and the middle shows the image with 50% noise. The right column shows the model's approximation of the original image." />,
-                    <p key="diffusion-mnist-1-5">To enable generating images from complete noise, I modified my model to iteratively denoise images over a number of timesteps. This way, we can start with complete noise and slowly approach a number. The resulting images after 20 epochs of training are below.</p>,
+                    <p key="diffusion-mnist-1-5">After this warmup, I enhanced the model to perform iterative denoising across multiple timesteps, allowing it to transform pure noise into plausible digit images. The results after 20 epochs showcased the model's ability to gradually synthesize digit-like images from random inputs.</p>,
                     <CaptionedImage key="diffusion-mnist-1-6" src="/proj/diffusion-mnist/time_conditioned_epoch20.png" caption="The results of iteratively denoising an image." />,
-                    <p key="diffusion-mnist-1-7">Although the images are denoised, they don't necessarily resemble real handwritten numbers. To fix this, I added one more change to the model: I explicitly tell the model what number each training image corresponds corresponds to. When generating an image, we then specify what number we want an image of. This small change considerably improves the model in generating realistic images of handwritten digits.</p>,
+                    <p key="diffusion-mnist-1-7">To further improve realism and control, I incorporated conditional generation—providing the target digit label during training and specifying it during inference. This adjustment allowed the model to generate images corresponding to specific digits on demand, dramatically increasing output quality and relevance.</p>,
                     <CaptionedImage key="diffusion-mnist-1-8" src="/proj/diffusion-mnist/class_conditioned_epoch20.png" caption="The final results of the diffusion model." />,
-                    <p key="diffusion-mnist-1-9">I really enjoyed getting to apply my lecture knowledge with this project. The idea and process of diffusion models is the basis of many popular image generation models today (e.g., OpenAI's DALL-E, Stable Diffsion, etc.). Although this model is nowhere near as complex or powerful, I still had a blast learning and experimenting with this project.</p>,
+                    <p key="diffusion-mnist-1-9">Working on this project was deeply rewarding, as it connected course concepts to emerging real-world applications. While my implementation remains a simplified proof-of-concept (training requires a lot of expensive computing power!), it reflects key principles behind today's most advanced image generation systems.</p>,
                 ]}
             />,
         ]
