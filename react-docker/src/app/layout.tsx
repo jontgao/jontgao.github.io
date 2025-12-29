@@ -44,7 +44,6 @@ export default function RootLayout({
         <div className='w-full max-w-mx mx-auto overflow-hidden'>
           <NavLinkRow />
           {children}
-          
           <Footer />
         </div>
       </body>

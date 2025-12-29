@@ -40,7 +40,7 @@ const NameplateSubtitle = forwardRef<HTMLDivElement>(function NameplateSubtitle(
             }, 2500);
 
             return function () { clearInterval(interval); };
-        }, 2500 * 2);
+        }, 2500);
 
         return function () { clearTimeout(firstTimeout); }
     }, []);
