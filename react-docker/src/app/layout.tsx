@@ -22,9 +22,10 @@ export default function RootLayout({
         
         <meta property="og:title" content="Jonathan Gao" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/propic.jpg" /> {/* TODO: fix previews */}
+        <meta property="og:image" content="/propic.jpg" />
         <meta property="og:url" content="https://jontgao.github.io/" />
       </head>
+      {/* todo: fix preview on mobile. something about og:image? */}
       <body>
         <div className='w-full max-w-mx mx-auto overflow-hidden'>
           <NavLinkRow />
