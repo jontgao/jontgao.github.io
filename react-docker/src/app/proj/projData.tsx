@@ -383,7 +383,7 @@ export const projData: Proj[] = [
                     <CaptionedImage key="misc-graphic-0-5" src="/proj/misc-graphic/graceupongrace.jpg" caption="Adobe Illustrator. 2023. Wall art." />,
                     <CaptionedImage key="misc-graphic-0-6" src="/proj/misc-graphic/roadtrip_shirt.png" caption="Adobe Illustrator. 2019. A shirt design for my dorm. Designed with Luke Knutson." />,
                     <CaptionedImage key="misc-graphic-0-7" src="/proj/misc-graphic/super.jpg" caption="Adobe Photoshop, Adobe Illustrator. 2023. Wall art." />,
-                    // <CaptionedImage key="misc-graphic-0-8" src="/proj/misc-graphic/tedx.jpg" caption="Adobe Illustrator, Adobe Photoshop. 2019. A poster design for my high school's very first TEDx conference." />,
+                    // <CaptionedImage key="misc-graphic-0-8" src="/proj/misc-graphic/tedx.jpg" caption="Adobe Illustrator, Adobe Photoshop. 2019. A poster design for the Illinois Math and Science Academy's inaugural TEDx conference." />,
                     <CaptionedImage key="misc-graphic-0-9" src="/proj/misc-graphic/skate.png" caption="Adobe Illustrator. 2023. A promotional social media graphic for a club." />,
                     <CaptionedImage key="misc-graphic-0-10" src="/proj/misc-graphic/daytreat.jpg" caption="Adobe Illustrator. 2023. A promotional social media graphic for a club." />,
                 ]}
