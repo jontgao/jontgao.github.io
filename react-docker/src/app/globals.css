@@ -27,6 +27,10 @@
     @apply bg-proj-hero-img md:bg-proj-hero-md lg:bg-proj-hero-lg xl:bg-proj-hero-xl bg-cover-x bg-no-repeat;
   }
 
+  .proj-content-styles {
+    @apply flex flex-col gap-[4rem] paragraph-text;
+  }
+
   .text-style-display-title {
     @apply text-[3rem] md:text-[8rem] font-black leading-[1];
   }

@@ -2,7 +2,7 @@ import React from "react"
 
 export interface H2SubsectionProps {
     subsectionTitle: string,
-    subsectionContent?: React.ReactElement[],
+    subsectionContent?: React.ReactElement | React.ReactElement[],
     paragraph?: string, // if provided, ignores subsectionContent with paragraph
 }
 export default function H2Subsection({ subsectionTitle, subsectionContent, paragraph }: H2SubsectionProps ) {

@@ -6,10 +6,10 @@ import { useState, useEffect, forwardRef } from "react"
 
 const subtitles = [
     "ML Engineer",
-    "CS @ UIUC",
     "Swiftie",
-    "UI/UX Designer",
+    "Software Engineer",
     "Weight Lifter",
+    "UI/UX Designer",
     "Beyoncé Lover",
     "Mario Kart Racer",
 ]

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import React from "react"
-import { projData, error404ProjData, Proj } from "../projData"
+import { projData, error404ProjData, Proj, contentBySlug } from "../projData"
 
 interface PageParams {
   params: Promise<{ slug: string }>;
@@ -27,15 +27,12 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 export default async function Page({ params }: PageParams) {
     const awaitedParams = await params
     const proj = lookUpProj(awaitedParams)
+    const Content = contentBySlug[proj.slug]
     return (
         <div>
             <h1>{proj.metaTitle}</h1>
             <div className="flex flex-col gap-[4rem] paragraph-text">
-              {proj.content.map((el, idx) =>
-                React.isValidElement(el)
-                  ? React.cloneElement(el, { key: el.key || idx })
-                  : el
-              )}
+              <Content />
             </div>
         </div>
     )
