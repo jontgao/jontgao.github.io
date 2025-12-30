@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import type { Metadata } from 'next'
 import React from "react"
 import { projData, error404ProjData, Proj, contentBySlug } from "../projData"
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 export default async function Page({ params }: PageParams) {
     const awaitedParams = await params
     const proj = lookUpProj(awaitedParams)
-    const Content = contentBySlug[proj.slug]
+
+    const Content = (proj.slug in contentBySlug) ? contentBySlug[proj.slug] : contentBySlug['error-404']
     return (
         <div>
             <h1>{proj.metaTitle}</h1>
