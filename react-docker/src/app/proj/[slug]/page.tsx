@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next'
 import React from "react"
 import { projData, error404ProjData, Proj, contentBySlug } from "../projData"

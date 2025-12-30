@@ -1,7 +1,7 @@
 import H2Subsection from "../../components/h2_subsection"
 import { LinkButtonRow } from "../../components/link_button";
 import TLDR from "../../components/tldr"
-import { CaptionedImage, Caption } from "../../components/captioned_image";
+import { CaptionedImage } from "../../components/captioned_image";
 
 export default function ContentHackIllinois() {
     return (
