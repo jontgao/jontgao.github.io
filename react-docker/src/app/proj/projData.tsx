@@ -156,10 +156,10 @@ export const projData: Proj[] = [
                         <li><b>Deployment:</b> I developed and integrated a <a href="https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting">plug-in</a> to deploy the model on edge devices, enabling real-time data collection and on-device inference.</li>
                     </ul>,
                     <p key="anl-4-2">Ultimately, my work at Argonne grew my skills in ML model design, implementation, and deployment in real-world settings. Further, I gained extensive hands-on experience with data pre-processing and handling oh-so-many data quality issues. I am very grateful to have had the opportunity to collaborate with my supervisors in such a high-impact project.</p>,
-                    <p key="anl-4-2">While newer architectures are now leading the field in time-series prediction, my work ar Argonne played a critical role in developing an effective forecasting model for time-dependent data, especially with the constraints of edge deployment. As I have continued to learn about the ever-evolving energy field (like with my <Link href="/proj/siu">research at SIU</Link>), I hope to create further impact in projects like this.</p>,
-                    <p key="anl-4-2">My resulting plug-in and poster for my project can be viewed below.</p>,
-                    <LinkButtonRow key="anl-1" linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
-                    <object key="anl-2-5" data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
+                    <p key="anl-4-3">While newer architectures are now leading the field in time-series prediction, my work ar Argonne played a critical role in developing an effective forecasting model for time-dependent data, especially with the constraints of edge deployment. As I have continued to learn about the ever-evolving energy field (like with my <Link href="/proj/siu">research at SIU</Link>), I hope to create further impact in projects like this.</p>,
+                    <p key="anl-4-4">My resulting plug-in and poster for my project can be viewed below.</p>,
+                    <LinkButtonRow key="anl-4-5" linkButtonProps={[{linkUrl:"https://github.com/jontgao/waggle-plugin-solar-irradiance-forecasting", buttonProps:{text: "Project Github"}}]}/>,
+                    <object key="anl-4-6" data="/proj/anl/Gao-Jonathan-SULI-MCS.pdf" type="application/pdf" width="100%" height="720" />,
                 ]}
             />,
         ]
