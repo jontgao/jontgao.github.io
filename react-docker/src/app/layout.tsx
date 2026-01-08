@@ -1,18 +1,14 @@
 import './globals.css'
 import NavLinkRow from './components/link_row';
 import Footer from './components/footer';
-
+import RouteChangeTracker from './components/route_change_tracker';
 
 export const metadata = {
   title: 'Jonathan Gao',
   description: "I'm a Masters student in computer science at the University of Illinois at Urbana-Champaign with a focus in AI/ML.",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children,}: {children: React.ReactNode,}) {
   return (
     <html lang="en">
       <head>
@@ -29,6 +25,7 @@ export default function RootLayout({
       <body>
         <div className='w-full max-w-mx mx-auto overflow-hidden'>
           <NavLinkRow />
+          <RouteChangeTracker />
           {children}
           <Footer />
         </div>
