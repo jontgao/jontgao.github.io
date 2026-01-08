@@ -1,4 +1,5 @@
 import {navLinks} from './link_data'
+import Link from 'next/link';
 
 interface LinkProps {
   text: string,
@@ -11,7 +12,7 @@ export function LinkRow({linkProps}: LinkRowProps) {
   return (
     <div className={`flex flex-row body-text gap-[2rem]`}>
       {
-        linkProps.map(x => <a href={x.linkUrl} key={x.text}>{x.text}</a>)
+        linkProps.map(x => <Link href={x.linkUrl} key={x.text}>{x.text}</Link>)
       }
     </div>
   )

@@ -1,5 +1,6 @@
 import H2Subsection from "../../components/h2_subsection"
 import { CaptionedImage } from "../../components/captioned_image";
+import Link from "next/link";
 
 export default function ContentFoh() {
     return (
@@ -10,7 +11,7 @@ export default function ContentFoh() {
                 subsectionContent={[
                     <p key="foh-0-0">I went on two week-long Filter of Hope mission trips to different cities in a Caribbean country, one in 2022 and one in 2024. During the mission trip, we team up with a local church and translators to go door-to-door to connect personally with families and install life-changing water filters. This country's culture is so beautiful and welcoming, and it was truly an honor to spread even just the smallest drop of hope to such a beautiful people.</p>,
                     <p key="foh-0-1">To attend the trip, I support raised (essentially: asking people to donate you money) over a thousand dollars in funds both years. That in and of itself was a new and frightening experience, but I learned a lot through it and would encourage anyone holding back from going on a trip like this to dive in!</p>,
-                    <p key="foh-0-2">We had truly the most gracious hosts, and were lucky enough to eat incredibly delicious food every day, even though food is in limited supply there. Over the course of my two trips, I got to see three different parts of the country, and every part is so incredibly beautiful. It's an experience I treasure. If you would like to get involved or donate, learn more about <a href="https://filterofhope.org/">Filter of Hope</a>.</p>,
+                    <p key="foh-0-2">We had truly the most gracious hosts, and were lucky enough to eat incredibly delicious food every day, even though food is in limited supply there. Over the course of my two trips, I got to see three different parts of the country, and every part is so incredibly beautiful. It's an experience I treasure. If you would like to get involved or donate, learn more about <Link href="https://filterofhope.org/">Filter of Hope</Link>.</p>,
                     <p key="foh-0-3">Check out some photos below!</p>,
                 ]}
             />
