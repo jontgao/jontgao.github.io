@@ -15,6 +15,7 @@ export default function RootLayout({children,}: {children: React.ReactNode,}) {
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="apple-mobile-web-app-title" content="Jonathan Gao" />
+        <meta name="google-site-verification" content="DVaIblDu4F8zQD1rXokDEFYEp2ZENnTmqeotWSqsggk" />
         
         <meta property="og:title" content="Jonathan Gao" />
         <meta property="og:type" content="website" />
